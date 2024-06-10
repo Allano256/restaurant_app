@@ -1,1 +1,1 @@
-web: gunicorn resytaurant_app.wsgi
+web: gunicorn restaurant_app.wsgi
