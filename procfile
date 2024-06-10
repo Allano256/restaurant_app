@@ -1,0 +1,1 @@
+web: gunicorn resytaurant_app.wsgi
