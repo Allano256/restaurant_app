@@ -21,7 +21,14 @@ class Booking(models.Model):
     booked_on = models.DateTimeField(auto_now_add=True)
     # #Here i have connected the BOOKINGS TO CUSTOMER model with this code
     booking_relationship_to_Customer = models.ForeignKey(Customer, on_delete = models.CASCADE, related_name ="customer_booking")
- 
+
+    class Meta:
+          ordering = ["-booked_on"]
+  
+
+
+
+
 
  
 
