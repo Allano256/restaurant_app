@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*q@1trq!ncxqwu1&blhxj9dp_wa3$-%v+j4)fz8v^$k(x*(la^'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-allano256-restaurantapp-utpqky50lrg.ws.codeinstitute-ide.net','.herokuapp.com' ]
 
@@ -90,6 +90,13 @@ DATABASES = {
     'default':
     dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net",
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
