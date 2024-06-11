@@ -6,6 +6,6 @@ from .models import Booking
 
 # Create your views here.
 def book_table(request):
-    pass
+    return render(request, "booking/booking.html")
 
  

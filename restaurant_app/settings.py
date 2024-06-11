@@ -36,13 +36,14 @@ ALLOWED_HOSTS = ['8000-allano256-restaurantapp-utpqky50lrg.ws.codeinstitute-ide.
 # Application definition
 
 INSTALLED_APPS = [
+    'booking',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'booking',
+   
 ]
 
 MIDDLEWARE = [
