@@ -16,22 +16,25 @@ class Customer(models.Model):
 
 
 class Booking(models.Model):
-    number_of_guests = models.IntegerField(Customer, default=0 ,unique=True)
+    number_of_guests = models.IntegerField(default=0 ,unique=True)
     date = models.DateField()
     time = models.TimeField()
     message_to_restaurant = models.CharField(max_length=100, blank=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f"{self.number_of_guests} {self.date}  {self.time} {self.message_to_restaurant}"
 
 
 class CancelBooking(models.Model):
-    name = models.CharField(Booking, max_length=50 ,unique=True)
+    name = models.CharField( max_length=50 ,unique=True)
+    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, null=True)
 
 
     def __str__(self):
          return self.name
        
+
 
 
 
