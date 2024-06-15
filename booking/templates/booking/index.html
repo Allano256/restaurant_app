@@ -15,20 +15,20 @@
 
 
     {% block content%}
-    <header id="head">
-        <div class="logo">JO's restaurant</div>
-        <div class="buttons">
-            <button class="one">Make a Reservation</button>
-            <button class="one" >Cancel a reservation </button>
-        </div>  
-    </header>
+    
 
     <section class="container">
-        <div class="tin"> 
-             <img id="picture" src="/static/booking/images/pexels-pablo-rodriguez-656229712-20652773.jpg" alt="An image of food" class="landing_page">
-            </div>
+
+        <div class="main-image"> 
+             <img  id="picture" src="{% static  'booking/images/main-image.jpg'  %}" class="landing_page">
+             <div class="word">  <h2>Welcome to JO's restaurant. </h2></div>
+        
+    
+        </div>
+       
     
     </section>
+
 
     <footer >
         <div class="media">

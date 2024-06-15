@@ -10,12 +10,14 @@ def starting_page(request):
     return render(request, "booking/index.html")
 
 
+def reservation(request):
+    return render(request, "booking/book.html")
+
+
 def cancel_booking(request):
-    return render(request, 'booking/cancel_booking')
+    return render(request, "booking/cancel_booking")
 
 
-def book(request):
-    return render(request, 'booking/book.html')
 
 
 

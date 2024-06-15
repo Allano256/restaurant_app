@@ -1,11 +1,54 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+    {% load static %}
 
 
+  
+
+    {% block css_files %}
+
+    <link rel="stylesheet" href="{% static "booking/book.css"  %}" />
+    {% endblock%}
+<!-- 
     <title>{% block title%}
-        Booking
-        {% endblock%}</title>
+        Make your booking
+        {% endblock%}</title> -->
 
 
     {% block content%}
-    <h1>Here we shall have a form to take booking details!</h1>
+
+    <form action="/" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="visitor_name" placeholder="Omar Lay" >
+        </div>
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" id="email" name="visitor_email" placeholder="alex@test.com" required>
+        </div>
+        <div class="elem-group">
+          <label for="phone">Your Phone</label>
+          <input type="tel" id="phone" name="customer_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+        <hr>
+        <div class="elem-group inlined">
+          <label for="guests">Number of guests</label>
+          <input type="number" id="guests" name="number_of_guests"  required>
+        </div>
+       
+        <div class="elem-group inlined">
+          <label for="date"> Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="time">time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        
+        <div class="elem-group">
+          <label for="message">Anything Else?</label>
+          <textarea id="message" name="message_to_restaurant" placeholder="Tell us anything else that might be important about your booking." ></textarea>
+        </div>
+        <button type="submit">Make reservation</button>
+      </form>
+
     {% endblock%}
