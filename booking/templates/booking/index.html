@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+ {% load static %}
+
+
+
+    <title>{% block title%}
+        JO's Restaurant
+        {% endblock%}</title>
+
+   {% block css_files %}
+
+   <link rel="stylesheet" href="{% static "booking/index.css"  %}" />
+
+   {% endblock%}
+
+
+    {% block content%}
+    <header id="head">
+        <div class="logo">JO's restaurant</div>
+        <div class="buttons">
+            <button class="one">Make a Reservation</button>
+            <button class="one" >Cancel a reservation </button>
+        </div>  
+    </header>
+
+    <section class="container">
+        <div class="tin"> 
+             <img id="picture" src="/static/booking/images/pexels-pablo-rodriguez-656229712-20652773.jpg" alt="An image of food" class="landing_page">
+            </div>
+    
+    </section>
+
+    <footer >
+        <div class="media">
+            <ul class="socials">
+                <li>
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noopenner"
+                      aria-label="Visit our facebook page opens in a new tab"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopenner"
+                      aria-label="Visit our instagram page opens in a new tab"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.twitter.com/"
+                      target="_blank"
+                      rel="noopenner"
+                      aria-label="Visit our twitter page opens in a new tab"
+                      ><i class="fa-brands fa-square-twitter"></i
+                    ></a>
+                  </li>
+            </ul>
+        </div>
+        
+        <div class="copyright">
+            <p class="para">&copy; 2024 JO's restaurant. All rights reserved.</p>
+        </div>
+        
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/f326954674.js"
+      crossorigin="anonymous"></script>
+
+    {% endblock%}
