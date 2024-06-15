@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-allano256-restaurantapp-mcfgy7yhwvw.ws.codeinstitute-ide.net' ,'.herokuapp.com' ]
 
@@ -137,7 +137,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIR = [
-    BASE_DIR / "static"
+    BASE_DIR / "booking" / "static"
+   
 ]
 
 # Default primary key field type
