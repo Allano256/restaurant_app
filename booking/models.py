@@ -36,23 +36,14 @@ class CancelBooking(models.Model):
          return self.name
 
 
-class ReviewForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = '__all__'
-        labels = {
-           "name" : 'your_name',
-           "email":'your_email',
-           "telephone": 'your_telephone',
-           "number_of_guests": 'number_of_guests',
-           "date": 'date',
-           "time": 'time',
-           "message_to_restaurant": 'message_to_restaurant'
-        }
-       
-
-
-
-
-
+class Review(models.Model):
+    name = models.CharField(max_length=50 ,unique=True)
+    email = models.EmailField(max_length=50, blank=True)
+    phone = models.CharField(max_length=50)
+    number_of_guests = models.IntegerField(default=0 ,unique=True)
+    date = models.DateField()
+    time = models.TimeField()
+    message_to_restaurant = models.CharField(max_length=100, blank=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
+   
    

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+    {% load static %}
+
+
+    {% block css_files %}
+
+    <!-- <link rel="stylesheet" href="{% static "booking/book.css"  %}" /> -->
+    <link rel="stylesheet" href="{% static "reviews/style.css"  %}" />
+    {% endblock%}
+<!-- 
+    <title>{% block title%}
+        Make your booking
+        {% endblock%}</title> -->
+
+
+    {% block content%}
+     <form action="/" method="POST">
+       {% csrf_token%}
+       <div class="form-control">
+        {{form}}
+       </div>
+    
+       <button type="submit" value="submit" </button>
+     </form>
+
+  
+    {% endblock%}
