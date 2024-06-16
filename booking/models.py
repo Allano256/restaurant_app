@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 # Create your models here.
 
 
@@ -33,6 +34,21 @@ class CancelBooking(models.Model):
 
     def __str__(self):
          return self.name
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = '__all__'
+        labels = {
+           "name" : 'your_name',
+           "email":'your_email',
+           "telephone": 'your_telephone',
+           "number_of_guests": 'number_of_guests',
+           "date": 'date',
+           "time": 'time',
+           "message_to_restaurant": 'message_to_restaurant'
+        }
        
 
 

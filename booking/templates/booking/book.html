@@ -15,40 +15,54 @@
 
 
     {% block content%}
+     <form action="/" method="POST">
+       {% csrf_token%}
+       {{form}}
+       <input type="submit" value="submit">
+     </form>
 
-    <form action="/" method="post">
+<!-- 
+    <form action="/" method="POST">
+      {%csrf token%}
         <div class="elem-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="visitor_name" placeholder="Omar Lay" >
+          
+          <label for="  {{forms.name.name}}">Your Name</label>
+         "{{name}}" 
         </div>
         <div class="elem-group">
-          <label for="email">Your E-mail</label>
-          <input type="email" id="email" name="visitor_email" placeholder="alex@test.com" required>
+           
+          <label for="{{forms.email.email}}">Your E-mail</label>
+         "{{email}}" 
         </div>
         <div class="elem-group">
-          <label for="phone">Your Phone</label>
-          <input type="tel" id="phone" name="customer_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+          
+          <label for="{{forms.phone.phone}}">Your Phone</label>
+         "{{phone}}" 
         </div>
         <hr>
         <div class="elem-group inlined">
-          <label for="guests">Number of guests</label>
-          <input type="number" id="guests" name="number_of_guests"  required>
+          
+          <label for="{{forms.number_of_guests.guests}}">Number of guests</label>
+          "{{number_of_guests}}"
         </div>
        
         <div class="elem-group inlined">
-          <label for="date"> Date</label>
-          <input type="date" id="date" name="date" required>
+           
+          <label for="{{forms.date.date}}"> Date</label>
+          "{{date}}"
         </div>
         <div class="elem-group inlined">
-          <label for="time">time</label>
-          <input type="time" id="time" name="time" required>
+           
+          <label for="{{forms.time.time}}">time</label>
+          "{{time}}" 
         </div>
         
         <div class="elem-group">
-          <label for="message">Anything Else?</label>
-          <textarea id="message" name="message_to_restaurant" placeholder="Tell us anything else that might be important about your booking." ></textarea>
+           
+          <label for="{{ forms.message_to_restaurant}} ">Leave a messgae to the restaurant</label>
+         "{{message_to_restaurant}}" 
         </div>
-        <button type="submit">Make reservation</button>
-      </form>
+        <button type="submit"> Make reservation </button>
+      </form> -->
 
     {% endblock%}
