@@ -1,6 +1,7 @@
 h2, p {
     color: white;
     margin: 0;
+    letter-spacing: 3px;
 }
 
 .text {
@@ -9,6 +10,3 @@ h2, p {
   
 }
 
-#paragraph {
-    color: rgb(183, 173, 25);
-}
