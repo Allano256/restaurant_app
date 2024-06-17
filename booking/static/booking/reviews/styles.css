@@ -6,7 +6,7 @@ body {
     margin:0;
 }
 
-form {
+ form { 
     margin: 3rem auto;
     width: 90%;
     max-width: 30rem;
@@ -16,14 +16,16 @@ form {
     box-shadow: 0 2px 8px rgba(0,0,0);
 }
 
-button {
+ button {
+   
     cursor: pointer;
-    padding:0.5rem 1.5rem  ;
+    padding:0.7rem 1.5rem  ;
     border-radius: 12px;
-    background-color: blueviolet;
+    background-color: #34582e;
     color: white;
     border: 1px solid #1f0050;
-}
+    /* text-align: center; */
+} 
 
 
 button:hover,
@@ -57,4 +59,4 @@ button:active {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
-}
+} */
