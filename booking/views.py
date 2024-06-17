@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 from django.views.generic.base import TemplateView  #Builds views that rener templates.
-from .models import Booking, CancelBooking, Customer, Review
+from .models import Review
 #  Feedback
 
 
