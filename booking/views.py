@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReviewForm
 from django.views import View
-from django.views.generic.base import Templates  #Builds views that rener templates.
+from django.views.generic.base import TemplateView  #Builds views that rener templates.
 # from .models import Booking, CancelBooking, Customer, Review
 
 
