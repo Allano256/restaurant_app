@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReviewForm
 from django.views import View
+from django.views.generic.base import Templates  #Builds views that rener templates.
 # from .models import Booking, CancelBooking, Customer, Review
 
 
@@ -89,9 +90,20 @@ def cancel_booking(request):
     return render(request, "booking/cancel_booking")
 
 
-def thank_you(request):
-    return HttpResponse("Thank you for your booking.")
+# def thank_you(request):
+#     return HttpResponse("booking/thank_you.html")
 
+class thank_youView(TemplateView):
+    """
+    This view will post a confirmation message of the reservation.
+    """
+    template_name = "booking/thank_you.html"
+
+    def get_context_data(self, **kwargs ):
+       context =  super().get_context_data(**kwargs)
+       context['message']  = "Welcome to JO's restaurant!"
+       
+       return context
 
 
 
