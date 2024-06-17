@@ -1,132 +1,72 @@
-@import url('href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"')
+@import url('href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"');
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
     font-family: 'Lato', sans-serif;
 }
 
-body {
+body, html {
    
     margin: 0px;
     padding: 0px;
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    width: 100%;
 }
 
 #head {
     height: 150px;
-}
-
-.logo {
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: 50px;
-    letter-spacing: 5px;
-}
-
-.buttons {
-    padding-right: 10px;
-}
-
-.one {
-    height: 50px;
-    width: 170px;
-    cursor: pointer;
-    border-radius: 10px;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.3);
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2rem;
     
 }
 
-.one:hover {
-    color: rgb(255, 0, 255);
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+.image img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image {
+    height: 100vh;
+    background-color: red;
+}
+
+.text {
+    padding: 2rem 3rem;
 }
 
 
 
-
-#head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main-image {
-    position: relative;
-  text-align: center;
-}
-
-.word  {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: azure;
-}
-
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-
- 
-
- 
-footer {
+footer{
     background-color: black;
-}
-.foot {
-
-        text-align: center;
-        padding: 20px 0;
-        display: block;
-        justify-content: space-evenly;
-        list-style-type: none;
-   
 }
 
 .socials  {
-    text-align: center;
-    padding: 20px 0;
     display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
+    justify-content:center ;
+    padding: 20px;
+  
 }
 
-
-
-.socials a {
-    font-size: 30px;
-    padding: 5%;
-    color: white;
+.socials li {
+    margin-right: 50px;
 }
 
-.socials a  {
-    text-decoration: none;
-}
-
-.copyright {
-   
+.para {
     text-align: center;
 }
-.para {
-    color: white;
-}
 
-#picture {
-  width:100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-} 

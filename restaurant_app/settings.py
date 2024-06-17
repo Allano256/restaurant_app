@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-allano256-restaurantapp-mcfgy7yhwvw.ws.codeinstitute-ide.net' ,'.herokuapp.com' ]
+ALLOWED_HOSTS = ['8000-allano256-restaurantapp-gkua18dl4in.ws.codeinstitute-ide.net' ,'.herokuapp.com' ]
 
 
 # Application definition
@@ -136,8 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIR = [
-    BASE_DIR / "booking" / "static"
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
    
 ]
 

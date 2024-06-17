@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
  {% load static %}
 
 
@@ -10,6 +11,7 @@
    {% block css_files %}
 
    <link rel="stylesheet" href="{% static "booking/index.css"  %}" />
+   <link rel="stylesheet" href="{% static  "styles.css"  %}" />
 
    {% endblock%}
 
@@ -17,27 +19,31 @@
     {% block content%}
     
 
-    <section class="container">
-
-        <div class="main-image"> 
-          <div class="one">
-            <img  id="picture" src="{% static  'booking/images/main-image.jpg'  %}" class="landing_page">
+    <section class="container" >
+          
+        <!-- <div class="main-image">  -->
+          <div class="image">
+            <img   id="picture" src="{% static  'booking/images/main-image.jpg'  %}" class="landing_page">
           </div>
-             <div class="word"> 
+              
+          {% include "booking/includes/welcome.html" %}
+             <!-- <div class="text"> 
                <h2>Welcome to JO's restaurant. </h2>
                <p>At JO'S restaurant we provide world class catering services ranging from traditional Indian food to West African dishes, <br>
-              a dive into the tropical dishes and the European cuisine. Welcome to JO's restaurant.</p>
+                   a dive into the tropical dishes and the European cuisine. Welcome to JO's restaurant.</p>
+               </div> -->
 
-            </div>
-            <div class="two">
+            <div class="image">
               <img src=" {% static 'booking/images/avocado.jpg' %}" alt=" A plate with avocado food">
             </div>
 
-            <div class="three">
+
+            <div class="image">
               <img src=" {% static 'booking/images/assorted_food.jpg' %}" alt="A plate with different foodstuff">
             </div>
-      
-        </div>
+
+         
+        <!-- </div> -->
        
     
     </section>

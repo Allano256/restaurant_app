@@ -1,0 +1,14 @@
+h2, p {
+    color: white;
+    margin: 0;
+}
+
+.text {
+    background-color: black;
+    text-align: center;
+  
+}
+
+#paragraph {
+    color: rgb(183, 173, 25);
+}
