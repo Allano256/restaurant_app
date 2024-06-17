@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking, Customer, CancelBooking
+from .models import Booking, Customer, CancelBooking, Review
 
 
 # Register your models here.
@@ -15,3 +15,4 @@ class BookingAdmin(admin.ModelAdmin):
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Booking, BookingAdmin)
 admin.site.register(CancelBooking)
+admin.site.register(Review)
