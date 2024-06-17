@@ -1,6 +1,7 @@
 from django import forms
 
 from .models import Review
+#  Feedback
 
 # class ReviewForm(forms.Form):
 #     name = forms.CharField(max_length=50 )
@@ -29,3 +30,14 @@ class ReviewForm(forms.ModelForm):
             "message_to_restaurant":"Leave a message to the restaurant"
 
         }
+
+# class ThankYou(forms.ModelForm):
+#     model = Feedback
+#     fields = '__all__'
+#     labels = {
+#         'reservation': 'reservation',
+#         'book':'booked_time',
+#         'date':'booked_date',
+#         'number_of_guests': 'number_of_guests',
+        
+#     }

@@ -9,6 +9,7 @@ urlpatterns = [
     path('cancel',views.cancel_booking, name= 'cancel'),
     # path('thanks', views.thank_you, name='thank_you'),
     path('reservation', views.ReservationView.as_view()),
-    path('thanks', views.thank_youView.as_view())
+    path('thanks', views.thank_youView.as_view()),
+   
   
 ]

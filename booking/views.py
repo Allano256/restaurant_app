@@ -3,8 +3,11 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReviewForm
 from django.views import View
+from django.views.generic.edit import FormView
+from django.views.generic import ListView
 from django.views.generic.base import TemplateView  #Builds views that rener templates.
-# from .models import Booking, CancelBooking, Customer, Review
+from .models import Booking, CancelBooking, Customer, Review
+#  Feedback
 
 
 
@@ -13,29 +16,45 @@ def starting_page(request):
     
     return render(request, "booking/index.html")
 
-class ReservationView(View):
-    """
-    This  class based view  will record reservations and save it to the database.
-    
-    """
-    def get(self, request):
-        form = ReviewForm()
 
-        return render(request, "booking/review.html", {
-        "form": form
-    } )
+class ReservationView(FormView):
+    """
+    These variables help us to identify which form,template to show the user and template to return incase of successful submission.
+    """
+    form_class = ReviewForm
+    template_name = 'booking/review.html'
+    success_url = '/thank_you.html'
+
+    """
+    This function will validate and save the data to the database.
+    """
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+# class ReservationView(View):
+#     """
+#     This  class based view  will record reservations and save it to the database.
     
-    def post(self, request):
-        form = ReviewForm(request.Post)
+#     """
+#     def get(self, request):
+#         form = ReviewForm()
+
+#         return render(request, "booking/review.html", {
+#         "form": form
+#     } )
+    
+#     def post(self, request):
+#         form = ReviewForm(request.Post)
         
-        if form.is_Valid():
-            form.save()
-            return HttpResponserRedirect("booking/thank_you.html")
+#         if form.is_Valid():
+#             form.save()
+#             return HttpResponserRedirect("booking/thank_you.html")
 
 
-        return render(request, "booking/review.html", {
-        "form": form
-    } )
+#         return render(request, "booking/review.html", {
+#         "form": form
+#     } )
 
 
 
@@ -101,9 +120,24 @@ class thank_youView(TemplateView):
 
     def get_context_data(self, **kwargs ):
        context =  super().get_context_data(**kwargs)
+       details = Review.objects.all()
        context['message']  = "Welcome to JO's restaurant!"
        
        return context
+
+
+# class FeedbackView(ListView):
+
+#     template_name = ('booking/thank_you_.html')
+#     model = Review
+    
+#     # def get_context_data(self, **kwargs):
+#     #     context = super().get_context_data(**kwargs)
+#     #     details = Review.objects.all()
+#     #     context['details'] = details
+#     #     return context
+
+  
 
 
 

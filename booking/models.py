@@ -47,3 +47,8 @@ class Review(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
    
    
+# class Feedback(models.Model):
+#     reservation = models.CharField(max_length=100)
+#     time = models.TimeField()
+#     date = models.DateField()
+#     guest = models.IntegerField()
