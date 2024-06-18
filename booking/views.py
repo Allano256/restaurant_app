@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReviewForm
@@ -23,7 +23,7 @@ class ReservationView(FormView):
     """
     form_class = ReviewForm
     template_name = 'booking/review.html'
-    success_url = '/thank_you.html'
+    success_url = 'booking/thank_you.html'
 
     """
     This function will validate and save the data to the database.
@@ -95,17 +95,17 @@ class ReservationView(FormView):
 
 
 
-def get_name(review):
+def get_name(Review):
     """
 Helper function to help us get the name of the customer to cancel their booking.
 """
-    return review['name']
+    return Review['name']
 
 def cancel_booking(request):
     """
     This is a function that cancels or deletes a reservation.
     """
-    sorted_reservation = review.sort(key=get_name)
+    sorted_reservation = Review.sort(key=get_name)
     if sorted_reservation == user_input:
         sorted_reservation.delete()
         
@@ -124,23 +124,30 @@ class thank_youView(TemplateView):
     def get_context_data(self, **kwargs ):
        context =  super().get_context_data(**kwargs)
        details = Review.objects.all()
-       context['message']  = "Welcome to JO's restaurant!"
+       context['message']  = "A summary of your booking"
+       
        
        return context
 
+class thank_youListView(TemplateView):
+    template_name = "booking/thank_you_list.html"
 
-# class FeedbackView(ListView):
 
-#     template_name = ('booking/thank_you_.html')
-#     model = Review
-    
-#     # def get_context_data(self, **kwargs):
-#     #     context = super().get_context_data(**kwargs)
-#     #     details = Review.objects.all()
-#     #     context['details'] = details
-#     #     return context
+    def get_context_data(self, **kwargs):
+        """
+        This method will get the details of the booking and present them to the user,
+        after a succesfully submitted form
+        """
+        context =super().get_context_data(**kwargs)
+        summary= Review.objects.all()
+        context["summary"] = summary
+        return context
 
-  
+        
+
+class CancelBookingView(View):
+    def get(self, request):
+        form = ReviewForm
 
 
 

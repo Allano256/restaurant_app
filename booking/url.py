@@ -10,6 +10,7 @@ urlpatterns = [
     # path('thanks', views.thank_you, name='thank_you'),
     path('reservation', views.ReservationView.as_view()),
     path('thanks', views.thank_youView.as_view()),
+    path('summary', views.thank_youListView.as_view())
    
   
 ]

@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+# from django.contrib.auth.models import User
 
 
 
@@ -17,5 +19,8 @@ class Review(models.Model):
 class Cancel(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="customer" )
     name = models.CharField(max_length=50,)
+
+    def __str__(self):
+        return f"{self.name}"
 
   

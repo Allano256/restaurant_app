@@ -1,11 +1,11 @@
-    {% extends 'base.html' %}
+    {% extends 'base.html' %} 
 
      {% block title%}Thank YOU Message! {% endblock%}
 
      {% block content%}
 
   
-     <section>
+      <section>
       <ul>
          <li>
              <a
@@ -15,34 +15,9 @@
       </ul>
 
      <div class="message">
-         <h1>Thank You For your Reservation!</h1>
+         <h1>Thank you for your reservation</h1>
          <p>{{message}}</p>
-        
+         
     
        
     
-         <section>
-           <div class="reservation">
-               <h1> RESERVATION</h1>
-           </div>
-         
-            <div class="booked">
-               <h2>BOOKED TIME</h2>
-               <p> {{review.time}}</p>
-          
-            </div>
-        
-            <div class="date">
-               <h2>BOOKED DATE</h2>
-               <p>{{review.date}}</p>
-            </div>
-          
-            <div class="guest">
-               <h2>NUMBER OF GUESTS</h2>
-           <p>{{review.number_of_guests}}</p>
-            </div>
-          
-         </section>
- 
-
-         {% endblock %}
