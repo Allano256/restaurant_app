@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import  Review, Cancel
+from .models import  Reservation, Cancel
 
 
 # Register your models here.
-class ReviewAdmin(admin.ModelAdmin):
-    list_display = ("name","email","phone","number_of_guests","date","time","message_to_restaurant")
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ("name_user","email_user","phone_user","number_of_guests","date_of_month","time_of_day","message_to_restaurant")
 
-admin.site.register(Review, ReviewAdmin)
+admin.site.register(Reservation, ReservationAdmin)
 admin.site.register(Cancel)

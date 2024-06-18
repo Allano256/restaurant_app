@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
 from django.views.generic.base import TemplateView  #Builds views that render templates.
-from .models import Review, Cancel
+from .models import Reservation, Cancel
 
 
 
@@ -17,7 +17,7 @@ def starting_page(request):
     return render(request, "booking/index.html")
 
 
-class ReservationView(FormView):
+class ReserveView(FormView):
     """
     These variables help us to identify which form,template to show the user and template to return incase of successful submission.
     """
@@ -95,17 +95,17 @@ class ReservationView(FormView):
 
 
 
-def get_name(Review):
+def get_name(reservation):
     """
 Helper function to help us get the name of the customer to cancel their booking.
 """
-    return Review['name']
+    return Reservation['name']
 
 def cancel_booking(request):
     """
     This is a function that cancels or deletes a reservation.
     """
-    sorted_reservation = Review.sort(key=get_name)
+    sorted_reservation = Reservation.sort(key=get_name)
     if sorted_reservation == user_input:
         sorted_reservation.delete()
         
@@ -123,7 +123,7 @@ class thank_youView(TemplateView):
 
     def get_context_data(self, **kwargs ):
        context =  super().get_context_data(**kwargs)
-       details = Review.objects.all()
+       details = Reservation.objects.all()
        context['message']  = "A summary of your booking"
        
        
@@ -139,7 +139,7 @@ class thank_youListView(TemplateView):
         after a succesfully submitted form
         """
         context =super().get_context_data(**kwargs)
-        summary= Review.objects.all()
+        summary= Reservation.objects.all()
         context["summary"] = summary
         return context
 

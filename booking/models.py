@@ -5,19 +5,19 @@ from datetime import datetime
 
 
 # Create your models here.
-class Review(models.Model):
-    name = models.CharField(max_length=50 ,unique=True)
-    email = models.EmailField(max_length=50, blank=True)
-    phone = models.CharField(max_length=50)
+class Reservation(models.Model):
+    name_user = models.CharField(max_length=50 ,unique=True, default=None)
+    email_user = models.EmailField(max_length=50, blank=True)
+    phone_user = models.CharField(max_length=50 , default =None)
     number_of_guests = models.IntegerField(default=0 ,unique=True)
-    date = models.DateField()
-    time = models.TimeField()
+    date_of_month = models.DateField(default=None)
+    time_of_day = models.TimeField(default=None)
     message_to_restaurant = models.CharField(max_length=100, blank=True)
 
    
 
 class Cancel(models.Model):
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="customer" )
+    review = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name="customer" )
     name = models.CharField(max_length=50,)
 
     def __str__(self):
