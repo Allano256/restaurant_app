@@ -5,9 +5,9 @@ from .forms import ReviewForm
 from django.views import View
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
-from django.views.generic.base import TemplateView  #Builds views that rener templates.
-from .models import Review
-#  Feedback
+from django.views.generic.base import TemplateView  #Builds views that render templates.
+from .models import Review, Cancel
+
 
 
 
@@ -95,17 +95,20 @@ class ReservationView(FormView):
 
 
 
-def get_name(reservation):
+def get_name(review):
     """
 Helper function to help us get the name of the customer to cancel their booking.
 """
-    return reservation['name']
+    return review['name']
 
 def cancel_booking(request):
     """
     This is a function that cancels or deletes a reservation.
     """
-    sorted_reservation = reservation.sort(key=get_name)
+    sorted_reservation = review.sort(key=get_name)
+    if sorted_reservation == user_input:
+        sorted_reservation.delete()
+        
     return render(request, "booking/cancel_booking")
 
 

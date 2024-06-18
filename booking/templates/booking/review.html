@@ -14,14 +14,26 @@
 
 
     {% block content%}
-     <form action="/" method="POST">
+    <div class="modal hidden">
+     <button class="close-modal">&times;</button>
+
+     <form action="" method="POST">
        {% csrf_token%}
+
        <div class="form-control">
         {{form}}
        </div>
     
        <button type="submit" value="submit">Submit </button>
      </form>
+       
+    </div>
+    <div class="overlay hidden"></div>
 
+   
   
     {% endblock%}
+
+    {% block extras %}
+    <script src="{% static 'js/modal.js' %}"></script>
+    {% endblock %}

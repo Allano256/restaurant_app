@@ -12,8 +12,10 @@ class Review(models.Model):
     time = models.TimeField()
     message_to_restaurant = models.CharField(max_length=100, blank=True)
 
+   
 
 class Cancel(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="customer" )
     name = models.CharField(max_length=50,)
-   
+
+  
