@@ -77,6 +77,17 @@ body, html {
 
 }
 
+a {
+     display: inline-block;
+    cursor: pointer;
+    padding:0.7rem 1.5rem  ;
+    border-radius: 12px;
+    background-color: #34582e;
+    color: white;
+    border: 1px solid #1f0050;
+    text-decoration: none;
+} 
+
 
 
 footer{
