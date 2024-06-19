@@ -2,6 +2,10 @@
     {% load static %}
 
 
+
+  
+
+
     {% block css_files %}
 
     <!-- <link rel="stylesheet" href="{% static "booking/book.css"  %}" /> -->
@@ -20,7 +24,8 @@
        {% csrf_token%}
 
        <div class="form-control">
-        {{form}}
+        <!-- {{form}} -->
+        {{ form.as_p }} 
        </div>
     
        <button type="submit" value="submit">Submit </button>

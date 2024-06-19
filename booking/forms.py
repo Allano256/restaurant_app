@@ -1,6 +1,17 @@
 from django import forms
-
+# from django_flatpickr.widgets import DatePickerInput, TimePickerInput
 from .models import Reservation
+
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class TimeInput(forms.DateInput):
+    input_type = 'time'
+
+
 
 class ReviewForm(forms.ModelForm):
     """
@@ -20,4 +31,7 @@ class ReviewForm(forms.ModelForm):
             "message_to_restaurant":"Leave a message to the restaurant"
 
         }
-
+        widgets = {
+            'date_of_month':  DateInput(),
+            'time_of_day': TimeInput(),
+         }
