@@ -1,23 +1,30 @@
-    {% extends 'base.html' %} 
+{% extends "base.html" %}
+{% block title%} A summary of booking {% endblock%}
 
-     {% block title%}Thank YOU Message! {% endblock%}
 
-     {% block content%}
+{% block content %}
+<div class="icon">
+    <ul>
+        <li>
+            <a
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+            </a>
+          </li>
+     </ul>
+</div>
 
+
+<!-- This for loop  created will loop over the Review Model and get specified records,
+the printed out html page will have this output to the customer. -->
+<div class="output">
   
-      <section>
-      <ul>
-         <li>
-             <a
-               <i class="fa-sharp fa-solid fa-circle-check"></i>
-             </a>
-           </li>
-      </ul>
+        {% for review in summary %}
+           <h2>NAME: {{summary.name}} </h2>
+           <h2>Number OF GUESTS: {{summary.number_of_guests}} </h2>
+           <h2>DATE: {{summary.date}}</h2>
+          <h2>TIME : {{summary.time}}</h2>
+      
+       {% endfor %}
+</div>
 
-     <div class="message">
-         <h1>Thank you for your reservation</h1>
-         <p>{{message}}</p>
-         
-    
-       
-    
+{% endblock%}

@@ -4,15 +4,30 @@
  {% block title%} Cancel Booking  {%endblock%}
 
  {% block css_files%}
-
+<link rel="stylesheet" href="booking/reviews/cancel.css">
  {% endblock %}
 
 
 
  {%block content%}
 
-<div class="cancelled">
-    <h2>Your reservation has been successfully cancelled!</h2>
-</div>
 
+ <form method="POST">
+   {% csrf_token %}
+    {{ form }}
+  <button class="button1 type="submit"> Cancel Booking</button>
+ </form>
+
+
+
+ 
+{% if messages%}
+<ul> 
+     {% for message in messages %}
+  
+     <li> {{message}}</li>
+    
+    {% endif %}
+</ul>
+{% endif %}
  {% endblock%}

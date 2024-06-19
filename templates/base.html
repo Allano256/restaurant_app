@@ -17,14 +17,33 @@
     <header id="head">
         <div class="logo"> <h1>JO's restaurant</h1></div>
         <div class="button">
+             <div>
              <a href="/booking/reserve"
              class="button1 "> <p id="paragraph">Make a Reservation</p></a>
+             <a href="/booking/cancel"
+             class="button1 "> <p id="paragraph">Cancel Reservation</p></a>
+
+             </div>
+
+             
         </div>  
     </header>
+
+    <!-- This enables messages to be displayed in templates. -->
+     {% if messages%}
+     <ul>
+          {% for message in messages %}
+          <li> {{message}}</li>
+          {% endfor %}
+     </ul>
+     {% endif %}
+
+     <!-- This will will enable feeding in of content on different pages. -->
     {% block content%}
 
     {% endblock%}
 </body>
+
 
 {% block extras %}
 
