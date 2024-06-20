@@ -28,10 +28,10 @@ class ReviewForm(forms.ModelForm):
         # fields = '__all__'
         exclude = ['customer']
         labels = {
-            "name_user":"Your name",
-            "email_user":"Your email",
-            "phone_user":"Your phone",
-            "number_of_guests":"number of guests",
+            "name_user":"Name",
+            "email_user":"Email",
+            "phone_user":"Phone Number",
+            "number_of_guests":"Number of Guests",
             "date_of_month":"Date",
             "time_of_day":"Time",
             "message_to_restaurant":"Leave a message to the restaurant"
@@ -46,4 +46,4 @@ class CancelForm(forms.Form):
     """
     This will be displayed for the user to cancel a reservation.
     """
-    name = forms.CharField(label='name')
+    name = forms.CharField(label='Name')
