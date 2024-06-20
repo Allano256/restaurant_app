@@ -8,7 +8,7 @@ LOG IN
 
 <h1>Log in</h1>
 {% block content %}
-<form action="" method="POST">
+<form action="/booking/reserve" method="POST">
   {% csrf_token%}
     <div>
    <label for="username">Username: </label>

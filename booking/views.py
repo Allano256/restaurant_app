@@ -68,7 +68,7 @@ def CancelBookingView(view):
     def post(self, request):
         form = form_class(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
+            name = form.cleaned_data['name_user']
             reservation_id = form.cleaned_data['reservation_id']
             reservation = get_object_or_404(Reservation, id=reservation_id, name_user=name)
 
@@ -114,7 +114,7 @@ class Thank_youView(TemplateView):
 
         context["summary"] = summary
         return context
-
+        return redirect(request,'logout.html' )
         
 
 class CancelBookingView(View):
@@ -127,7 +127,7 @@ def user_registration(request):
         form =CustomerRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            user_name.cleaned_data.get('user_name')
+            username.cleaned_data.get('username')
             messages.success(request, f" {user_name} Your account registration is successful!")
             return redirect('login')
 
@@ -148,18 +148,20 @@ def user_login(request):
         else:
             massages.error(request, 'Please use a valid username or password')
 
-    return render(request, 'login.html')
+    return render(request, 'booking/login.html')
 
 
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('')
 
 
 
 @login_required
-def home(request):
-    return render(request, 'home.html')
+
+def starting_page(request):
+    
+    return render(request, "booking/index.html")
 
 
  

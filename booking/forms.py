@@ -48,7 +48,7 @@ class CancelForm(forms.Form):
     """
     This will be displayed for the user to cancel a reservation.
     """
-    name = forms.CharField(label='Name')
+    name_user = forms.CharField(label='Name')
 
 
 class CustomerRegistrationForm(UserCreationForm):

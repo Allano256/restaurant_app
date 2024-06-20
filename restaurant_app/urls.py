@@ -27,5 +27,5 @@ urlpatterns = [
     path('login/',booking_views.user_login, name='login' ),
     path('logout/', booking_views.user_logout, name = 'logout'),
     path("__debug__/", include("debug_toolbar.urls")),
-   
+    path('authentication/', include('authentication.url') , name='authentication'),
 ]
