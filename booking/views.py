@@ -41,13 +41,16 @@ def CancelBookingView(view):
     database and cancel, if the form is not entered well...it wont be successfull but the,
     user gets a chance to re-enter their name.
     """
-    template_name = 'cancel.html'
+    template_name = 'booking/cancel.html'
     form_class = CancelForm
+
+   
 
     def get(self, request):
         form = self.form_class()
+        print(request)
         return render(request, self.template_name, {'form': form})
-
+      
     def post(self, request):
         form = self.form_class()
         return render(request, self.template_name, {'form': form})
