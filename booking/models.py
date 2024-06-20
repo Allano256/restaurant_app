@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 
 
@@ -11,10 +11,11 @@ class Reservation(models.Model):
         ('active', 'Active'),
         ('cancelled', 'Cancelled'),
     ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name_user = models.CharField(max_length=50)
     email_user = models.EmailField(max_length=50, blank=True)
     phone_user = models.CharField(max_length=50 , default =None)
-    number_of_guests = models.IntegerField(default=0,unique=False)
+    number_of_guests = models.IntegerField(default=0,)
     date_of_month = models.DateField(default=None)
     time_of_day = models.TimeField(default=None)
     message_to_restaurant = models.CharField(max_length=100, blank=True)
@@ -30,6 +31,7 @@ class Cancel(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
   
 

@@ -1,6 +1,8 @@
 from django import forms
 
 from .models import Reservation
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import User
 
 
 
@@ -26,7 +28,7 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Reservation
         # fields = '__all__'
-        exclude = ['customer']
+        exclude = ['user', 'status']
         labels = {
             "name_user":"Name",
             "email_user":"Email",
@@ -47,3 +49,11 @@ class CancelForm(forms.Form):
     This will be displayed for the user to cancel a reservation.
     """
     name = forms.CharField(label='Name')
+
+
+class CustomerRegistrationForm(UserCreationForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields =['username', 'email', 'password1', 'password2'] 

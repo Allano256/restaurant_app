@@ -16,13 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from booking import views as booking_views
 import debug_toolbar
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('booking/', include("booking.url"), name = 'booking' ),
+    path('register/', booking_views.user_registration, name='register'),
+    path('login/',booking_views.user_login, name='login' ),
+    path('logout/', booking_views.user_logout, name = 'logout'),
     path("__debug__/", include("debug_toolbar.urls")),
    
-
 ]

@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+
+
 {% block title%} A summary of booking {% endblock%}
 
 
@@ -14,16 +17,19 @@
 </div>
 
 
+
 <!-- This for loop  created will loop over the Review Model and get specified records,
 the printed out html page will have this output to the customer. -->
 <div class="output">
   
         {% for review in summary %}
-           <h2>NAME: {{summary.name}} </h2>
-           <h2>Number OF GUESTS: {{summary.number_of_guests}} </h2>
-           <h2>DATE: {{summary.date}}</h2>
-          <h2>TIME : {{summary.time}}</h2>
-      
+        <ul>
+          <li>NAME: {{review.name_user}} </li>
+          <li>Number OF GUESTS: {{review.number_of_guests}} </li>
+          <li>DATE: {{review.date_of_month}}</li>
+         <li>TIME : {{review.time_of_day}}</li>
+        </ul>
+        
        {% endfor %}
 </div>
 
