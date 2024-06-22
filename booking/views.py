@@ -45,6 +45,7 @@ class ReserveView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+@login_required
 
 def CancelBookingView(view):
     """
@@ -128,7 +129,7 @@ def user_registration(request):
         if form.is_valid():
             form.save()
             username.cleaned_data.get('username')
-            messages.success(request, f" {user_name} Your account registration is successful!")
+            messages.success(request, f" {username} Your account registration is successful!")
             return redirect('login')
 
     else:
@@ -138,13 +139,13 @@ def user_registration(request):
 
 def user_login(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            return redirect('home')
+            auth.login(request, user)
+            return redirect('/')
         else:
             massages.error(request, 'Please use a valid username or password')
 
@@ -152,8 +153,9 @@ def user_login(request):
 
 
 def user_logout(request):
-    logout(request)
-    return redirect('')
+    auth.logout(request)
+    messages.info(request, 'You have been logged out succsessfully.')
+    return redirect('/')
 
 
 
