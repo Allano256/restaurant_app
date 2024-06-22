@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from .forms import ReviewForm, CancelForm ,CustomerRegistrationForm
+from .forms import ReserveForm, CancelForm 
 from django.views import View
 from django.contrib import messages
 from django.views.generic.edit import FormView
@@ -30,8 +30,8 @@ class ReserveView(LoginRequiredMixin, CreateView):
     These variables help us to identify which form,template to show the user and template to return incase of successful submission.
     """
     model = Reservation
-    form_class = ReviewForm
-    template_name = 'booking/review.html'
+    form_class = ReserveForm
+    template_name = 'booking/reserve.html'
     success_url = 'booking/thank_you.html'
 
     """
@@ -73,25 +73,18 @@ def CancelBookingView(view):
             reservation_id = form.cleaned_data['reservation_id']
             reservation = get_object_or_404(Reservation, id=reservation_id, name_user=name)
 
-            if reservation.status == 'cancelled':
-                messages.info(request, 'This booking is cancelled already.')
+            if reservation.user == name:
+                reservation.delete()
+                messages.success(request, 'This booking has been cancelled successfully')
 
             else:
-                reservation.status = 'cancelled'
-                reservation.save()
-                message.success(request, 'Your reservation is cancelled.')
-            return redirect('booking/cancel.html')
+              
+                return redirect('booking/cancel.html')
 
         return render(request, self.template_name, {'form': form})
 
            
-# class AsanteView(View):
-    
-#     def get(self, request):
-#         return render(request, "booking/asante.html")
-   
-   
-   
+
 
 class Thank_youView(TemplateView):
     """

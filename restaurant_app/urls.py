@@ -26,3 +26,7 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
     path('accounts/', include('allauth.urls')),
 ]
+
+#Manage Admin titles
+admin.site.site_header = "JO's Restaurant administration site."
+admin.site.index_title = "Welcome to JO's Restaurant admin area..."

@@ -21,7 +21,7 @@ class TimeInput(forms.DateInput):
 
 
 
-class ReviewForm(forms.ModelForm):
+class ReserveForm(forms.ModelForm):
     """
     Here we infer our Review form from the Reservation model.
     """
@@ -50,10 +50,3 @@ class CancelForm(forms.Form):
     """
     name_user = forms.CharField(label='Name')
 
-
-class CustomerRegistrationForm(UserCreationForm):
-    email = forms.EmailField()
-
-    class Meta:
-        model = User
-        fields =['username', 'email', 'password1', 'password2'] 
