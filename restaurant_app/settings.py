@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['8000-allano256-restaurantapp-gkua18dl4in.ws.codeinstitute-ide.
 
 INSTALLED_APPS = [
     'booking',
+    'authentication',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,9 +44,32 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'authentication',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
    
 ]
+
+SITE_ID = 1
+"""
+We need to add SITE_ID = 1 so that Django can handle multiple sites from one database.
+The redirection URLs will redirect us back to home page after we've logged in or loggedout.
+"""
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# AUTHENTICATION_BACKENDS = [
+  
+#     # Needed to login by username in Django admin, regardless of `allauth`
+#     'django.contrib.auth.backends.ModelBackend',
+
+#     # `allauth` specific authentication methods, such as login by email
+#     'allauth.account.auth_backends.AuthenticationBackend',
+  
+# ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +81,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'restaurant_app.urls'
@@ -128,6 +153,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
