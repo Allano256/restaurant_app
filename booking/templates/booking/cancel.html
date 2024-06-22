@@ -4,18 +4,20 @@
  {% block title%} Cancel Booking  {%endblock%}
 
  {% block css_files%}
-<link rel="stylesheet" href="booking/reviews/cancel.css">
+<link rel="stylesheet" href="booking/reviews/index.css">
  {% endblock %}
 
 
 
  {%block content%}
-
+ <h2>Cancel Booking</h2>
+  <p> Are you sure you would like to cancel this booking?</p>
 
  <form method="POST">
    {% csrf_token %}
     {{ form }}
   <button class="button1 type="submit"> Cancel Booking</button>
+  <a href="booking/">No i want to maintain my reservation.</a>
  </form>
 
 

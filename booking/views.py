@@ -44,8 +44,26 @@ class ReserveView(LoginRequiredMixin, CreateView):
        
         return super().form_valid(form)
 
+class ReserveView_List(LoginRequiredMixin, ListView):
+    model = Reservation
+    template_name = 'bookings_list.html'
+    context_object_name = 'booking'
+
+    def get_context_data(self, **kwargs):
+        
+        context = super().get_context_data(**kwargs)
+        review = Reservation.objects.filter(user=self.request.user)
+        
+        context["review"] = review
+        return context
+        return redirect(request,'booking/logout' )
+        
+
+
 
 @login_required
+
+
 
 def CancelBookingView(view):
     """
