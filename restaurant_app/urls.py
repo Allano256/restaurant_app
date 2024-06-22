@@ -29,4 +29,4 @@ urlpatterns = [
 
 #Manage Admin titles
 admin.site.site_header = "JO's Restaurant administration site."
-admin.site.index_title = "Welcome to JO's Restaurant admin area..."
+admin.site.index_title = "Welcome to JO's Restaurant admin area"
