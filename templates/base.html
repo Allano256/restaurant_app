@@ -49,13 +49,16 @@
        
 
         <div class="button">
+            {% if user.is_authenticated %}
              <div>
              <a href="/booking/reserve"
              class="button1 "> <p id="paragraph">Make a Reservation</p></a>
              <a href="/booking/cancel"
              class="button1 "> <p id="paragraph">Cancel Reservation</p></a>
 
+
              </div>
+             {% endif%}
 
              
         </div>  

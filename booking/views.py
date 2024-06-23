@@ -20,9 +20,6 @@ from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
-def starting_page(request):
-    
-    return render(request, "booking/index.html")
 
 
 class ReserveView(LoginRequiredMixin, CreateView):
@@ -170,7 +167,7 @@ def user_logout(request):
 
 
 
-@login_required
+# @login_required
 
 def starting_page(request):
     
