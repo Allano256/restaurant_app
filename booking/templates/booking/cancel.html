@@ -1,35 +1,32 @@
 {% extends 'base.html'%}
 {% load static %}
 
- {% block title%} Cancel Booking  {%endblock%}
+{% block title%} Cancel Booking {%endblock%}
 
- {% block css_files%}
+{% block css_files%}
 <link rel="stylesheet" href="booking/reviews/index.css">
- {% endblock %}
+{% endblock %}
 
 
+{%block content%}
+<h2>Cancel Booking</h2>
+<p> Are you sure you would like to cancel this booking?</p>
 
- {%block content%}
- <h2>Cancel Booking</h2>
-  <p> Are you sure you would like to cancel this booking?</p>
-
- <form method="POST">
-   {% csrf_token %}
-    {{ form }}
-  <button class="button1 type="submit"> Cancel Booking</button>
+<form method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <button class="button1 type=" submit"> Cancel Booking</button>
   <a href="booking/">No i want to maintain my reservation.</a>
- </form>
+</form>
 
 
-
- 
 {% if messages%}
-<ul> 
-     {% for message in messages %}
-  
-     <li> {{message}}</li>
-    
-    {% endif %}
+<ul>
+  {% for message in messages %}
+
+  <li> {{message}}</li>
+
+  {% endif %}
 </ul>
 {% endif %}
- {% endblock%}
+{% endblock%}

@@ -20,6 +20,9 @@ from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
+def starting_page(request):
+    
+    return render(request, "booking/index.html")
 
 
 class ReserveView(LoginRequiredMixin, CreateView):
@@ -29,7 +32,7 @@ class ReserveView(LoginRequiredMixin, CreateView):
     model = Reservation
     form_class = ReserveForm
     template_name = 'booking/reserve.html'
-    success_url = 'booking/thank_you.html'
+    success_url = 'booking/single_reservation.html'
 
     """
     This function will validate and save the data to the database.
@@ -57,16 +60,9 @@ class ReserveView_List(LoginRequiredMixin, ListView):
         
 
 
-
-@login_required
-
-
-
 def CancelBookingView(view):
     """
-    This function will check the Customer user name provided if it matches any bookings in the,
-    database and cancel, if the form is not entered well...it wont be successfull but the,
-    user gets a chance to re-enter their name.
+    
     """
     template_name = 'booking/cancel.html'
     form_class = CancelForm
@@ -103,75 +99,46 @@ def CancelBookingView(view):
 
 class Thank_youView(TemplateView):
     """
-    This template will return a template indicating a summary of the Reservation.
+    This template will return a template indicating a summary of the Reservations.
     """
     template_name = "booking/thank_you.html"
 
 
     def get_context_data(self, **kwargs):
         """
-        This method will get the details of the booking and present them to the user,
-        after a succesfully submitted form
+        This method will get the details of all the bookings. 
+       
         """
         context =super().get_context_data(**kwargs)
-        summary = Reservation.objects.filter(user__id=self.request.user.id)
+        summary = Reservation.objects.all()
         
-        # print(len(list(summary)))
-
-        # for i in list(summary):
-        #     print(i.user.id, self.request.user.id)
-
+    
         context["summary"] = summary
         return context
-        return redirect(request,'logout.html' )
+        return redirect(request,'booking/index.html' )
+
+class SingleReservationView(TemplateView):
+    """
+    This class based view will output a single result of the reservation made by a specific customer.
+    """
+    template_name = "booking/single_reservation.html"
+
         
+    def get_context_data(self, **kwargs):
+        context =super().get_context_data(self, **kwargs)
+        result_id = kwargs[id]
+        selected_result = Reservation.objects.get(pk=result_id)
+        context['result'] = selected_result
+        return context
+
 
 class CancelBookingView(View):
     def get(self, request):
         form = ReviewForm
 
 
-def user_registration(request):
-    if request.method == 'POST':
-        form =CustomerRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username.cleaned_data.get('username')
-            messages.success(request, f" {username} Your account registration is successful!")
-            return redirect('login')
-
-    else:
-        form = CustomerRegistrationForm()
-    return render(request,'register.html', {'form': form})
 
 
-def user_login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = auth.authenticate(request, username=username, password=password)
-
-        if user is not None:
-            auth.login(request, user)
-            return redirect('/')
-        else:
-            massages.error(request, 'Please use a valid username or password')
-
-    return render(request, 'booking/login.html')
-
-
-def user_logout(request):
-    auth.logout(request)
-    messages.info(request, 'You have been logged out succsessfully.')
-    return redirect('/')
-
-
-
-# @login_required
-
-def starting_page(request):
-    
-    return render(request, "booking/index.html")
 
 
  

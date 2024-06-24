@@ -1,0 +1,19 @@
+{%  extends "base.html" %}
+
+ {% load static %}
+
+ {% block title %} Here is a summary of your booking. {% endblock %}
+
+ {% block css_files %}
+ <link rel="stylesheet" href="booking/reviews/index.css">
+ {% endblock %}
+
+
+ {% block content %}
+
+ <h2>{{result.name_user}}</h2>
+ <h2>{{result.number_of_guests}}</h2>
+ <h2>{{result.date_of_month}}</h2>
+ <h2>{{result.time_of_day}}</h2>
+  <p>Thank you for your reservation.</p>
+ {% endblock %}

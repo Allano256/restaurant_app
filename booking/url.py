@@ -10,8 +10,6 @@ urlpatterns = [
     path('reserve_list', views.ReserveView_List.as_view()),
     path('cancel', views.CancelBookingView.as_view(), name='cancel_booking'),
     path('summary', views.Thank_youView.as_view(), name='summary_of_booking'),
-    path('register', views.user_registration, name='register'),
-    path('login', views.user_login, name='login'),
-    path('logout', views.user_logout, name='logout'),
- 
+    path('reservation/<int:id>', views.SingleReservationView.as_view),
+   
 ]
