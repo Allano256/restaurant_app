@@ -5,7 +5,7 @@ from .forms import ReserveForm, CancelForm
 from django.views import View
 from django.contrib import messages
 from django.views.generic.edit import FormView
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView  #Builds view classes that render templates.
 from .models import Reservation, Cancel
 from django.contrib.auth.models import User
@@ -27,22 +27,14 @@ def starting_page(request):
 
 class ReserveView(LoginRequiredMixin, CreateView):
     """
-    These variables help us to identify which form,template to show the user and template to return incase of successful submission.
+   This class will save the data entered by the user after submission an redirect to success url!
     """
     model = Reservation
     form_class = ReserveForm
     template_name = 'booking/reserve.html'
     success_url = 'booking/single_reservation.html'
 
-    """
-    This function will validate and save the data to the database.
-    """
-    def form_valid(self, form):
-        booking = form.save(commit=False)
-        booking.user = User.objects.get(id=self.request.user.id)
-        booking.save()
-       
-        return super().form_valid(form)
+    
 
 class ReserveView_List(LoginRequiredMixin, ListView):
     model = Reservation
@@ -60,41 +52,16 @@ class ReserveView_List(LoginRequiredMixin, ListView):
         
 
 
-def CancelBookingView(view):
+class CancelBookingView(CreateView):
     """
-    
+    This class will delete the identified reservation with the primary key stated in the url patterns.
     """
+    model = Reservation
     template_name = 'booking/cancel.html'
     form_class = CancelForm
+    success_url = 'booking/index.html'
 
 
-    def get(self, request):
-        form = self.form_class()
-        print(request)
-        return render(request, self.template_name, {'form': form})
-      
-    def post(self, request):
-        form = self.form_class()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = form_class(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name_user']
-            reservation_id = form.cleaned_data['reservation_id']
-            reservation = get_object_or_404(Reservation, id=reservation_id, name_user=name)
-
-            if reservation.user == name:
-                reservation.delete()
-                messages.success(request, 'This booking has been cancelled successfully')
-
-            else:
-              
-                return redirect('booking/cancel.html')
-
-        return render(request, self.template_name, {'form': form})
-
-           
 
 
 class Thank_youView(TemplateView):
@@ -117,26 +84,14 @@ class Thank_youView(TemplateView):
         return context
         return redirect(request,'booking/index.html' )
 
-class SingleReservationView(TemplateView):
+class SingleReservationView(DetailView):
     """
     This class based view will output a single result of the reservation made by a specific customer.
     """
     template_name = "booking/single_reservation.html"
+    model = Reservation
 
-        
-    def get_context_data(self, **kwargs):
-        context =super().get_context_data(self, **kwargs)
-        result_id = kwargs[id]
-        selected_result = Reservation.objects.get(pk=result_id)
-        context['result'] = selected_result
-        return context
-
-
-class CancelBookingView(View):
-    def get(self, request):
-        form = ReviewForm
-
-
+    
 
 
 

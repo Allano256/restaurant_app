@@ -44,9 +44,15 @@ class ReserveForm(forms.ModelForm):
             'time_of_day': TimeInput(),
          }
 
-class CancelForm(forms.Form):
+class CancelForm(forms.ModelForm):
     """
     This will be displayed for the user to cancel a reservation.
     """
-    name_user = forms.CharField(label='Name')
+    class Meta: Reservation
+    fields = ['name_user', 'email' ]
+    labels = {
+        'name_user': 'Name',
+        'email_user': 'Email'
+    }
+    
 
