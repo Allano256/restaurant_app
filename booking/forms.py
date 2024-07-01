@@ -1,3 +1,4 @@
+
 from django import forms
 
 from .models import Reservation
@@ -55,4 +56,3 @@ class CancelForm(forms.ModelForm):
         'email_user': 'Email'
     }
     
-

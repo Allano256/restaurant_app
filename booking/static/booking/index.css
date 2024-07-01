@@ -130,3 +130,7 @@ footer{
     text-align: center;
 }
 
+.overlay {
+    position: relative;
+}
+

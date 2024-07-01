@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -17,79 +19,88 @@ from django.contrib.auth import authenticate, login, logout
 
 
 
-
-
 # Create your views here.
 def starting_page(request):
     
     return render(request, "booking/index.html")
 
 
+
+# def reserve(request):
+#     return render(request, 'booking/reserve.html')
+
 class ReserveView(LoginRequiredMixin, CreateView):
     """
-   This class will save the data entered by the user after submission an redirect to success url!
+   This class will save the data entered by the user after submission and redirect to success url!
     """
     model = Reservation
     form_class = ReserveForm
     template_name = 'booking/reserve.html'
-    success_url = 'booking/single_reservation.html'
+    success_url = 'booking/thanks/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+def thanks(request):
+    """
+    This template will return a thank you message of the Reservation.
+    """
+    return render(request, 'booking/thank_you.html')
+  
+
 
     
 
-class ReserveView_List(LoginRequiredMixin, ListView):
-    model = Reservation
-    template_name = 'bookings_list.html'
-    context_object_name = 'booking'
+# class ReserveView_List(LoginRequiredMixin, ListView):
+#     model = Reservation
+#     template_name = 'bookings_list.html'
+#     context_object_name = 'booking'
 
-    def get_context_data(self, **kwargs):
+#     def get_context_data(self, **kwargs):
         
-        context = super().get_context_data(**kwargs)
-        review = Reservation.objects.filter(user=self.request.user)
+#         context = super().get_context_data(**kwargs)
+#         review = Reservation.objects.filter(user=self.request.user)
         
-        context["review"] = review
-        return context
-        return redirect(request,'booking/logout' )
-        
-
-
-class CancelBookingView(CreateView):
-    """
-    This class will delete the identified reservation with the primary key stated in the url patterns.
-    """
-    model = Reservation
-    template_name = 'booking/cancel.html'
-    form_class = CancelForm
-    success_url = 'booking/index.html'
-
-
-
-
-class Thank_youView(TemplateView):
-    """
-    This template will return a template indicating a summary of the Reservations.
-    """
-    template_name = "booking/thank_you.html"
-
-
-    def get_context_data(self, **kwargs):
-        """
-        This method will get the details of all the bookings. 
+#         context["review"] = review
+#         return context
        
-        """
-        context =super().get_context_data(**kwargs)
-        summary = Reservation.objects.all()
+        
+
+
+# class CancelBookingView(CreateView):
+#     """
+#     This class will delete the identified reservation with the primary key stated in the url patterns.
+#     """
+#     model = Reservation
+#     template_name = 'booking/cancel.html'
+#     form_class = CancelForm
+#     success_url = 'booking/index.html'
+
+
+
+
+
+
+#     def get_context_data(self, **kwargs):
+#         """
+#         This method will get the details of all the bookings. 
+       
+#         """
+#         context =super().get_context_data(**kwargs)
+#         summary = Reservation.objects.all()
         
     
-        context["summary"] = summary
-        return context
-        return redirect(request,'booking/index.html' )
+#         context["summary"] = summary
+#         return context
+#         return redirect(request,'booking/index.html' )
 
-class SingleReservationView(DetailView):
-    """
-    This class based view will output a single result of the reservation made by a specific customer.
-    """
-    template_name = "booking/single_reservation.html"
-    model = Reservation
+# class SingleReservationView(DetailView):
+#     """
+#     This class based view will output a single result of the reservation made by a specific customer.
+#     """
+#     template_name = "booking/single_reservation.html"
+#     model = Reservation
 
     
 

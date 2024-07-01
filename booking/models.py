@@ -1,3 +1,5 @@
+
+
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
@@ -31,6 +33,7 @@ class Cancel(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
 
 

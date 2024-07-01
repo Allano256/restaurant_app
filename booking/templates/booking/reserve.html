@@ -1,11 +1,6 @@
 {% extends "base.html" %}
     {% load static %}
 
-
-
-  
-
-
     {% block css_files %}
 
     <!-- <link rel="stylesheet" href="{% static "booking/book.css"  %}" /> -->
@@ -20,7 +15,7 @@
     {% block content%}
    
      
-     <form action="/booking/reservation" method="GET">
+     <form action="{% url 'booking:reserve' %}" method="POST">
        {% csrf_token%}
 
        <div class="form-control">

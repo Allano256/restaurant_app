@@ -29,14 +29,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['8000-allano256-restaurantapp-gkua18dl4in.ws.codeinstitute-ide.net' ,'.herokuapp.com' ]
+ALLOWED_HOSTS = ['8000-allano256-restaurantapp-gova2qvrpl6.ws.codeinstitute-ide.net' ,'.herokuapp.com' ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'booking',
-    'authentication',
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
