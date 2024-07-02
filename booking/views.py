@@ -64,19 +64,19 @@ class SingleReservationView(DetailView):
     model = Reservation
 
 
-# class CancelBookingView(LoginRequiredMixin, CreateView):
-#     """
-#     This class will delete the identified reservation with the primary key stated in the url patterns.
-#     """
-#     model = Reservation
-#     template_name = 'booking/cancel.html'
-#     form_class = CancelForm
-#     success_url = reverse_lazy('booking:reserve')
+class CancelBookingView(LoginRequiredMixin, CreateView):
+    """
+    This class will delete the identified reservation with the primary key stated in the url patterns.
+    """
+    model = Reservation
+    template_name = 'booking/cancel.html'
+    form_class = CancelForm
+    success_url = reverse_lazy('booking:reserve')
 
 
-#     def reverse_view(request, pk):
-#          cancel_url = reverse('cancel', args=[pk])
-#          return redirect(cancel_url)
+    def reverse_view(request, pk):
+         cancel_url = reverse('cancel', args=[pk])
+         return redirect(cancel_url)
   
    
 
