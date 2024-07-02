@@ -12,21 +12,27 @@
 <h2>Cancel Booking</h2>
 <p> Are you sure you would like to cancel this booking for {{object.user_name}} on the {{object.date_of_month}} at {{object.time_of_day}}?</p>
 
-<form method="POST">
+
+<form  action=" {% url 'booking:cancel'%}" method="POST">
   {% csrf_token %}
   {{ form }}
-  <button class="button1 type=" submit"> Cancel Booking</button>
+
+  {% for reservation in reservations %}
+  <p>{{ reservation.name_user }}</p>
+  <a href="{% url 'cancel' reservation.pk %}">Cancel</a>
+{% endfor %}
+
 </form>
-<a href="booking/index.html">No i want to maintain my reservation.</a>
+<a href="{% url 'starting_page' %}">No i want to maintain my reservation.</a>
 
 
-{% if messages%}
+<!-- {% if messages%}
 <ul>
   {% for message in messages %}
 
   <li> {{message}}</li>
 
-  {% endif %}
+  {% endfor %}
 </ul>
-{% endif %}
+{% endif %} -->
 {% endblock%}

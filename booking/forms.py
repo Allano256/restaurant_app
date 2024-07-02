@@ -49,10 +49,11 @@ class CancelForm(forms.ModelForm):
     """
     This will be displayed for the user to cancel a reservation.
     """
-    class Meta: Reservation
-    fields = ['name_user', 'email' ]
-    labels = {
-        'name_user': 'Name',
-        'email_user': 'Email'
-    }
+    class Meta:
+        model = Reservation
+        fields = ['name_user', 'email_user' ]
+        labels = {
+            'name_user': 'Name',
+            'email_user': 'Email'
+        }
     
