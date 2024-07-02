@@ -92,6 +92,19 @@ body, html {
 
 }
 
+h2, p {
+    color: white;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.text {
+    background-color: black;
+    text-align: center;
+  
+}
+
+
 a {
     display: inline-block;
     cursor: pointer;
