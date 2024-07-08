@@ -37,6 +37,7 @@ class ReserveView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, 'Reservation was successful.')
         return super().form_valid(form)
 
 class ReserveViewList(LoginRequiredMixin, ListView):
@@ -63,22 +64,41 @@ class SingleReservationView(DetailView):
     template_name = "booking/single_reservation.html"
     model = Reservation
 
+@login_required
+def cancel_booking(request, reservation_id ):
+    """ This view will cancel a booking. """
+    booking_instance = get_object_or_404(Reservation, id=reservation_id, user=request.user)
 
-class CancelBookingView(LoginRequiredMixin, CreateView):
-    """
-    This class will delete the identified reservation with the primary key stated in the url patterns.
-    """
-    model = Reservation
-    template_name = 'booking/cancel.html'
-    form_class = CancelForm
-    success_url = reverse_lazy('booking:reserve')
+    if request.method == 'POST':
+        booking_instance.delete()
+        messages.success(request, 'Reservation cancelled successfully.')
+        return redirect('booking')
 
+    return render(request, 'cancel.html', {'booking_instance': booking_instance})
 
-    def reverse_view(request, pk):
-         cancel_url = reverse('cancel', args=[pk])
-         return redirect(cancel_url)
-  
    
+   
+
+
+
+
+
+# class CancelBookingView(LoginRequiredMixin, CreateView):
+#     """
+#     This class will delete the identified reservation with the primary key stated in the url patterns.
+#     """
+#     model = Reservation
+#     template_name = 'booking/cancel.html'
+#     form_class = CancelForm
+#     success_url = reverse_lazy('booking:reserve')
+
+
+#     def reverse_view(request, pk):
+#          cancel_url = reverse('cancel', args=[pk])
+#          return redirect(cancel_url)
+
+
+
 
     
 

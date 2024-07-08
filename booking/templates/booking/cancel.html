@@ -10,18 +10,12 @@
 
 {%block content%}
 <h2>Cancel Booking</h2>
-<p> Are you sure you would like to cancel this booking for {{object.user_name}} on the {{object.date_of_month}} at {{object.time_of_day}}?</p>
+<p> Are you sure you would like to cancel this reservation for {{object.user_name}} on the {{object.date_of_month}} at {{object.time_of_day}}?</p>
 
 
 <form  action=" {% url 'booking:cancel'%}" method="POST">
   {% csrf_token %}
-  {{ form }}
-
-  {% for reservation in reservations %}
-  <p>{{ reservation.name_user }}</p>
-  <a href="{% url 'cancel' reservation.pk %}">Cancel</a>
-{% endfor %}
-
+  <button type="submit"> Cancel Reservation</button>
 </form>
 <a href="{% url 'starting_page' %}">No i want to maintain my reservation.</a>
 
