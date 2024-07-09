@@ -15,7 +15,7 @@
 
 <form  action=" {% url 'booking:cancel'%}" method="POST">
   {% csrf_token %}
-  <button type="submit"> Cancel Reservation</button>
+  <button class="btn-delete" pk="{{ reservation.pk }}" > Cancel Reservation</button>
 </form>
 <a href="{% url 'starting_page' %}">No i want to maintain my reservation.</a>
 

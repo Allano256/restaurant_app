@@ -22,6 +22,7 @@ class Reservation(models.Model):
     time_of_day = models.TimeField(default=None)
     message_to_restaurant = models.CharField(max_length=100, blank=True)
     status  = models.CharField(max_length=10, choices=STATUS_CHOICE, default='active')
+    
 
    
    

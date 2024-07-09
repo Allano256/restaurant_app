@@ -1,4 +1,4 @@
-<!-- {%  extends "base.html" %}
+{%  extends "base.html" %}
 
  {% load static %}
 
@@ -11,9 +11,11 @@
 
  {% block content %}
 
- <h2>{{result.name_user}}</h2>
- <h2>{{result.number_of_guests}}</h2>
- <h2>{{result.date_of_month}}</h2>
- <h2>{{result.time_of_day}}</h2>
-  <p>Thank you for your reservation.</p>
- {% endblock %} -->
+ <p>Thank you for your reservation.</p>
+
+        
+ <h2>NAME: {{order.name_user}}</h2>
+       
+ <h2>DATE: {{order.date_of_month}}</h2>
+   
+ {% endblock %}

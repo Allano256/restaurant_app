@@ -49,37 +49,55 @@ class ReserveViewList(LoginRequiredMixin,  generic.ListView):
     template_name = 'reservation_list.html'
 
     def get_queryset(self):
-        user = self.request.user
         return Reservation.objects.all()
-        # return Reservation.objects.filter(user=user)
-   
 
+        # user = self.request.user
+        # return Reservation.objects.filter(user=user), to get only one reservation by a user
+
+
+def single_reservation(request, pk):
+    """
+    This  view will output a single result of the reservation made by a specific customer.
+    """
+   
+    order = get_object_or_404(Reservation, pk=pk)
+
+
+    return render(request,'booking/single_reservation.html', {'order': order})
+ 
 
 def thanks(request):
     return render(request, 'booking/thank_you.html')
 
-class SingleReservationView(DetailView):
-    """
-    This class based view will output a single result of the reservation made by a specific customer.
-    """
-    template_name = "booking/single_reservation.html"
-    model = Reservation
+
 
 @login_required
-def cancel_booking(request, reservation_id ):
+def cancel_booking(request, pk ):
     """ This view will cancel a booking. """
-    booking_instance = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+    reservation = get_object_or_404(Reservation, pk=pk)
 
-    if request.method == 'POST':
-        booking_instance.delete()
-        messages.success(request, 'Reservation cancelled successfully.')
-        return redirect('booking')
-
-    return render(request, 'cancel.html', {'booking_instance': booking_instance})
-
-   
+    if reservation.user == request.user:
+        reservation.delete()
+        messages.add_message(request, messages.SUCCESS, 'Reservation has been deleted successfully!')
+    else:
+        messages.add_message(request, messages.ERROR, 'There was an error canceling your reservation,please check the details entered and try again. If the problem persists please contact the restaurant via telephone. ')
+    return HttpResponseRedirect('booking/single_reservation.html')
    
 
+
+
+
+
+
+    # booking_instance = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+
+    # if request.method == 'POST':
+    #     booking_instance.delete()
+    #     messages.success(request, 'Reservation cancelled successfully.')
+    #     return redirect('booking')
+
+    # return render(request, 'cancel.html', {'booking_instance': booking_instance})
+  
 
 
 
@@ -115,8 +133,6 @@ def cancel_booking(request, reservation_id ):
     
 
 
-
- 
 
 
   
