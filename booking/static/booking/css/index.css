@@ -92,7 +92,7 @@ body, html {
 }
 
 h2, p {
-    color: white;
+    color: rgb(185, 44, 44);
     margin: 0;
     letter-spacing: 3px;
 }
@@ -203,3 +203,37 @@ button:active {
 } 
 
 
+.tin {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.tin-tin {
+    margin: 20px;
+    padding: 20px;
+}
+
+.btn {
+    margin: 20px  20px;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    background-color: #34582e;
+    color: white;
+ 
+}
+
+.hidden {
+
+    display: none;
+}
+
+.modal {
+    position: absolute;
+
+}
+
+.overlay{
+    display: absolute;
+}

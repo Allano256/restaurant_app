@@ -51,9 +51,9 @@ class CancelForm(forms.ModelForm):
     """
     class Meta:
         model = Reservation
-        fields = ['name_user', 'email_user' ]
+        fields = ['name_user' ]
         labels = {
             'name_user': 'Name',
-            'email_user': 'Email'
+            
         }
     

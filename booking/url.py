@@ -10,7 +10,7 @@ urlpatterns = [
     # path('thanks/', views.ThankYouView.as_view(), name='thanks'),
     path('thanks', views.thanks, name='thanks'), 
     path('reserves/', views.ReserveViewList.as_view()),
-    path('cancel/<int:pk>/', views.cancel_booking, name='cancel'),
+    path('cancel/<int:reservation_id>/', views.cancel_booking, name='cancel'),
     path('reserves/<int:pk>/', views.single_reservation, name='single_reservation'),
    
 ]

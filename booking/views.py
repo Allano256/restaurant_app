@@ -1,6 +1,6 @@
 
 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReserveForm, CancelForm 
@@ -61,6 +61,7 @@ def single_reservation(request, pk):
     """
    
     order = get_object_or_404(Reservation, pk=pk)
+    # print("reservation = ", order.name_user)
 
 
     return render(request,'booking/single_reservation.html', {'order': order})
@@ -72,16 +73,17 @@ def thanks(request):
 
 
 @login_required
-def cancel_booking(request, pk ):
+def cancel_booking(request, reservation_id ):
     """ This view will cancel a booking. """
-    reservation = get_object_or_404(Reservation, pk=pk)
+    reservation = get_object_or_404(Reservation, reservation_id=pk)
+     
 
     if reservation.user == request.user:
         reservation.delete()
         messages.add_message(request, messages.SUCCESS, 'Reservation has been deleted successfully!')
     else:
         messages.add_message(request, messages.ERROR, 'There was an error canceling your reservation,please check the details entered and try again. If the problem persists please contact the restaurant via telephone. ')
-    return HttpResponseRedirect('booking/single_reservation.html')
+    return HttpResponseRedirect(reverse('booking/single_reservation.html'))
    
 
 
