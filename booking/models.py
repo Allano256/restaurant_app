@@ -6,13 +6,13 @@ from django.contrib.auth.models import User
 
 
 
-
-# Create your models here.
-class Reservation(models.Model):
-    STATUS_CHOICE = [
+STATUS_CHOICE = [
         ('active', 'Active'),
         ('cancelled', 'Cancelled'),
     ]
+# Create your models here.
+class Reservation(models.Model):
+   
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name_user = models.CharField(max_length=50)
     email_user = models.EmailField(max_length=50, blank=True)

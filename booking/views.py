@@ -37,19 +37,23 @@ class ReserveView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        messages.success(self.request, 'Reservation was successful.')
+        messages.success(self.request, 'Thank you for making your reservation with us, a table has been reserved for you.')
         return super().form_valid(form)
 
-class ReserveViewList(LoginRequiredMixin, generic.ListView):
+class ReserveViewList(LoginRequiredMixin,  generic.ListView):
     """
-    This view will display all the bookings.
+    This view will display all the bookings in the system.
+
     """
-    queryset = Reservation.objects.all()
+   
     template_name = 'reservation_list.html'
+
+    def get_queryset(self):
+        user = self.request.user
+        return Reservation.objects.all()
+        # return Reservation.objects.filter(user=user)
    
 
-  
-       
 
 def thanks(request):
     return render(request, 'booking/thank_you.html')

@@ -9,7 +9,7 @@ urlpatterns = [
     path('reserve/', views.ReserveView.as_view(), name ='reserve'),
     # path('thanks/', views.ThankYouView.as_view(), name='thanks'),
     path('thanks', views.thanks, name='thanks'), 
-    path('reserves', views.ReserveViewList.as_view()),
+    path('reserves/', views.ReserveViewList.as_view()),
     # path('cancel/<int:reservation_id>/', views.cancel_booking, name='cancel'),
     # path('reservation/<int:pk>/', views.SingleReservationView.as_view),
    
