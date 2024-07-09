@@ -203,3 +203,7 @@ button:active {
 } 
 
 
+.content {
+    display: flex;
+    justify-content: center;
+}

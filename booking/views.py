@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .forms import ReserveForm, CancelForm 
-from django.views import View
+from django.views import View, generic
 from django.contrib import messages
 from django.views.generic.edit import FormView
 from django.views.generic import ListView, DetailView
@@ -40,18 +40,15 @@ class ReserveView(LoginRequiredMixin, CreateView):
         messages.success(self.request, 'Reservation was successful.')
         return super().form_valid(form)
 
-class ReserveViewList(LoginRequiredMixin, ListView):
-    model = Reservation
-    template_name = 'bookings_list.html'
-    context_object_name = 'booking'
+class ReserveViewList(LoginRequiredMixin, generic.ListView):
+    """
+    This view will display all the bookings.
+    """
+    queryset = Reservation.objects.all()
+    template_name = 'reservation_list.html'
+   
 
-    def get_context_data(self, **kwargs):
-        
-        context = super().get_context_data(**kwargs)
-        review = Reservation.objects.filter(user=self.request.user)
-        
-        context["review"] = review
-        return context
+  
        
 
 def thanks(request):
@@ -97,6 +94,17 @@ def cancel_booking(request, reservation_id ):
 #          cancel_url = reverse('cancel', args=[pk])
 #          return redirect(cancel_url)
 
+
+
+
+
+  # def get_context_data(self, **kwargs):
+        
+    #     context = super().get_context_data(**kwargs)
+    #     review = Reservation.objects.filter(user=self.request.user)
+        
+    #     context["review"] = review
+    #     return context
 
 
 

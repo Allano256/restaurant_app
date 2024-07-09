@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title%} A list of all reservations {% endblock%}
+
+{% block css_files %} 
+
+
+   <link rel="stylesheet" type="text/css" href="{% static 'booking/css/index.css' %}">
+   <style>
+    #head {
+        
+        position: relative;
+        
+    }</style>
+   
+
+{% endblock%} 
+
+{% block content %}
+
+
+<div class="output">
+  
+        <h1>Reservation list.</h1>
+
+        {% for reservation in object_list %}
+      
+          <h1>NAME: {{reservation.name_user}} </h1>
+          <h1>DATE: {{reservation.date_of_month}}</h1>
+         <h2>TIME : {{reservation.time_of_day}}</h2>
+        
+    
+       {% endfor %}
+</div>
+
+{% endblock%}
