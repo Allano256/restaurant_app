@@ -9,19 +9,19 @@
 
 
 {%block content%}
-<h2>Cancel Booking</h2>
+<h2>Edit Booking</h2>
 
 <P>Please enter your user name.</P>
-<form  action=" {% url 'booking/cancel' reservation.id %}" method="GET">
+<form  action=" {% url 'booking/edit' reservation.id %}" id=reserveForm method="GET">
 
   {% csrf_token %}
 
-  <div class="form-control">
+  <div class="form-control " id='id_body'>
     {{form}}
     
    </div>
   
-  <button class="btn-delete" pk="{{ reservation.pk }}" > Cancel Reservation</button>
+  <button class="btn-edit" pk="{{ reservation.pk }} id="submitButton"" > Edit Reservation</button>
 </form>
 <!-- <a href="{% url 'starting_page' %}">No i want to maintain my reservation.</a> -->
 

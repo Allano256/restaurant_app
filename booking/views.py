@@ -40,6 +40,8 @@ class ReserveView(LoginRequiredMixin, CreateView):
         messages.success(self.request, 'Thank you for making your reservation with us, a table has been reserved for you.')
         return super().form_valid(form)
 
+
+
 class ReserveViewList(LoginRequiredMixin,  generic.ListView):
     """
     This view will display all the bookings in the system.
@@ -86,53 +88,38 @@ def cancel_reservation(request, reservation_id ):
     return HttpResponseRedirect(reverse('booking:reserve'))
    
 
+def edit_reservation(request, reservation_id):
+    """
+    A view to edit a reservation.
+    """
+    if request.method == 'POST':
+        change = get_object_or_404(Reservation, pk=reservation_id)
+        reserve_form = ReserveForm(data=request.POST, instance= change)
+
+        if reserve_form.is_valid() and change.user == request.user:
+            change = reserve_form.save(commit=False)
+            change.approved = False
+            change.save()
+            messages.add_message(request, messages.SUCCESS, 'Your reservation has been updated successfully!')
+
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating your reservation!')
+
+    return HttpResponseRedirect(reverse('booking:reserves'))
 
 
 
 
 
-    # booking_instance = get_object_or_404(Reservation, id=reservation_id, user=request.user)
-
-    # if request.method == 'POST':
-    #     booking_instance.delete()
-    #     messages.success(request, 'Reservation cancelled successfully.')
-    #     return redirect('booking')
-
-    # return render(request, 'cancel.html', {'booking_instance': booking_instance})
-  
-
-
-
-
-# class CancelBookingView(LoginRequiredMixin, CreateView):
-#     """
-#     This class will delete the identified reservation with the primary key stated in the url patterns.
-#     """
-#     model = Reservation
-#     template_name = 'booking/cancel.html'
-#     form_class = CancelForm
-#     success_url = reverse_lazy('booking:reserve')
-
-
-#     def reverse_view(request, pk):
-#          cancel_url = reverse('cancel', args=[pk])
-#          return redirect(cancel_url)
 
 
 
 
 
-  # def get_context_data(self, **kwargs):
-        
-    #     context = super().get_context_data(**kwargs)
-    #     review = Reservation.objects.filter(user=self.request.user)
-        
-    #     context["review"] = review
-    #     return context
 
 
 
-    
+
 
 
 
@@ -145,22 +132,6 @@ def cancel_reservation(request, reservation_id ):
 
 
 
-
-#     def get_context_data(self, **kwargs):
-#         """
-#         This method will get the details of all the bookings. 
-       
-#         """
-#         context =super().get_context_data(**kwargs)
-#         summary = Reservation.objects.all()
-        
-    
-#         context["summary"] = summary
-#         return context
-#         return redirect(request,'booking/index.html' )
-
-
-    
 
 
 

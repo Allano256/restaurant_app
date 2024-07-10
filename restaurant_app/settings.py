@@ -36,7 +36,6 @@ ALLOWED_HOSTS = ['8000-allano256-restaurantapp-gova2qvrpl6.ws.codeinstitute-ide.
 
 INSTALLED_APPS = [
     'booking',
-   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
