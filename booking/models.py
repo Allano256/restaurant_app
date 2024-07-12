@@ -20,7 +20,7 @@ class Reservation(models.Model):
     number_of_guests = models.IntegerField(default=0,)
     date_of_month = models.DateField(default=None)
     time_of_day = models.TimeField(default=None)
-    message_to_restaurant = models.CharField(max_length=100, blank=True)
+    message_to_restaurant = models.TextField(max_length=100, blank=True)
     status  = models.CharField(max_length=10, choices=STATUS_CHOICE, default='active')
     
 

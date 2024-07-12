@@ -7,10 +7,10 @@ const cancelConfirm = document.getElementById("cancelConfirm");
 const deleteButtons = document.getElementsByClassName("btn-delete");
 
 // Edit Reservation
-const editButtons = document.getElementsByClassName("btn-edit");
-const reserveText = document.getElementById("id_body");
-const reserveForm = document.getElementById("reserveForm");
-const submitButton = document.getElementById("submitButton");
+// const editButtons = document.getElementsByClassName("btn-edit");
+// const reserveText = document.getElementById("id_body");
+// const reserveForm = document.getElementById("updateForm");
+// const submitButton = document.getElementById("submitButton");
 const openModal = function (){
   
         modal.classList.remove('hidden');
@@ -34,12 +34,12 @@ for (let button of deleteButtons) {
   }
 
 
-  for (let button of editButtons) {
-    button.addEventListener("click", (e) => {
-      let reservationId = e.target.getAttribute("data-id");
-      let reserveContent = document.getElementById(`change${reservationId}`).innerText;
-      reserveText.value = reserveContent;
-      submitButton.innerText = "Update";
-      reserveForm.setAttribute("action", `/booking/edit/${reservationId}`);
-    });
-  }
+  // for (let button of editButtons) {
+  //   button.addEventListener("click", (e) => {
+  //     let reservationId = e.target.getAttribute("data-id");
+  //     let reserveContent = document.getElementById(`form-control${reservationId}`).innerText;
+  //     reserveText.value = reserveContent;
+  //     submitButton.innerText = "Update";
+  //     reserveForm.setAttribute("action", `/booking/edit/${reservationId}`);
+  //   });
+  // }

@@ -27,7 +27,7 @@
     <h2>DATE: {{reservation.date_of_month}}</h2>
     
     <button class="btn  show-modal  btn-delete " data-id='{{ reservation.id }}' > Delete </button>
-    <a class="btn btn-edit " data-id='{{ reservation.id }}'  > Edit </a>
+    <a class="btn btn-edit "   href="{% url 'booking:update' reservation.id %}" > Edit </a>
     
     </div>
 
@@ -40,13 +40,11 @@
         No
     </button>
    
-    <a id="cancelConfirm" href="#" class="btn
-    ">Yes</a>
+    <a id="cancelConfirm" href="#" class="btn  ">Yes</a>
+   
     
         
  </div>
-
- 
 
  {%endif %}
 

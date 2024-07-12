@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from .forms import ReserveForm, CancelForm 
 from django.views import View, generic
 from django.contrib import messages
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView,  UpdateView
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView  #Builds view classes that render templates.
 from .models import Reservation, Cancel
@@ -33,12 +33,17 @@ class ReserveView(LoginRequiredMixin, CreateView):
     model = Reservation
     form_class = ReserveForm
     template_name = 'booking/reserve.html'
-    success_url = reverse_lazy('booking:thanks')
+    # success_url = reverse_lazy('booking:single_reservation')
+   
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         messages.success(self.request, 'Thank you for making your reservation with us, a table has been reserved for you.')
+       
         return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('booking:single_reservation', args=[self.object.pk])
 
 
 
@@ -69,8 +74,6 @@ def single_reservation(request, pk):
     return render(request,'booking/single_reservation.html', {'reservation': reservation})
  
 
-def thanks(request):
-    return render(request, 'booking/thank_you.html')
 
 
 
@@ -88,27 +91,24 @@ def cancel_reservation(request, reservation_id ):
     return HttpResponseRedirect(reverse('booking:reserve'))
    
 
-def edit_reservation(request, reservation_id):
-    """
-    A view to edit a reservation.
-    """
-    if request.method == 'POST':
-        change = get_object_or_404(Reservation, pk=reservation_id)
-        reserve_form = ReserveForm(data=request.POST, instance= change)
 
-        if reserve_form.is_valid() and change.user == request.user:
-            change = reserve_form.save(commit=False)
-            change.approved = False
-            change.save()
+
+def update_reservation(request, reservation_id):
+    change = get_object_or_404(Reservation, pk=reservation_id)
+    form = ReserveForm(instance=change)
+    if request.method == 'POST':
+        form = ReserveForm(request.POST, instance= change)
+        if form.is_valid() and change.user == request.user:
+            form.save()
             messages.add_message(request, messages.SUCCESS, 'Your reservation has been updated successfully!')
 
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating your reservation!')
+    else:
+        pass
+            # messages.add_message(request, messages.ERROR, 'Error updating your reservation!')
+    context = {'form': form}
+    
 
-    return HttpResponseRedirect(reverse('booking:reserves'))
-
-
-
+    return render(request, 'booking/reserve.html', context)
 
 
 
