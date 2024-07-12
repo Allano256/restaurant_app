@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+    {% load static %}
+
+    {% block css_files %}
+
+   
+  
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'booking/style.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'booking/css/index.css' %}">
+    <style>
+    #head {
+        
+        position: relative;
+        
+    }</style>
+   
+    {% endblock%}
+
+     {% block title%} Make your booking {% endblock%}
+     
+       
+
+
+    {% block content%}
+   
+     
+     <form action="{% url 'booking:update' reservation.id %}"   method="POST">
+       {% csrf_token%}
+
+       <div class="form-control  ">
+        {{form}}
+        
+       </div>
+    
+       <button type="submit"  value="submit">Submit </button>
+       
+     </form>
+       
+
+    {% endblock %}

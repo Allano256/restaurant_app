@@ -28,12 +28,13 @@
 <body>
   
     <header id="head">
-       <a  href="booking/index.html"><div class="logo"  > <h1>JO's restaurant</h1></div></a> 
-        <div class="nav">
+        <div > <a  href="{% url 'booking:starting_page'%}"><div class="logo"  > <h1>JO's restaurant</h1></div></a></div>
+       
+       
             <!-- <ul> -->
                 {% if user.is_authenticated %}
                 <!-- <li class="nav-item"> -->
-                    <div>
+                    <div class="nav">
                     <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                 <!-- </li> -->
                 {% else %}
@@ -47,15 +48,15 @@
                 {% endif %}
             <!-- </ul> -->
         </div>
-        </div>
+     
        
 
         <div class="button">
             {% if user.is_authenticated %}
              <div>
-             <a href="/booking/reserve"
+             <a href="{% url 'booking:reserve' %}"
              class="button1 "> <p id="paragraph">Make a Reservation</p></a>
-             <a href="/booking/cancel"
+             <a href="{% url 'booking:reservations' %}"
              class="button1 "> <p id="paragraph">Cancel Reservation</p></a>
 
 

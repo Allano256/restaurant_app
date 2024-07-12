@@ -20,14 +20,19 @@
  {%  if user.is_authenticated %}
  <div class="tin">
     <div class="tin-tin">
-     <p>Thank you for your reservation.</p>
+     <p>A summary of your reservation</p>
     
     <h2>NAME: {{reservation.name_user}}</h2>
           
     <h2>DATE: {{reservation.date_of_month}}</h2>
     
+    <h2>GUESTS: {{reservation.number_of_guests}}</h2>
+    
     <button class="btn  show-modal  btn-delete " data-id='{{ reservation.id }}' > Delete </button>
-    <a class="btn btn-edit "   href="{% url 'booking:update' reservation.id %}" > Edit </a>
+    <a class="btn  "   href="{% url 'booking:update' reservation.id %}" > Edit </a>
+    
+    
+    
     
     </div>
 

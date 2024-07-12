@@ -22,7 +22,7 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 def starting_page(request):
-    
+   
     return render(request, "booking/index.html")
 
 
@@ -33,7 +33,7 @@ class ReserveView(LoginRequiredMixin, CreateView):
     model = Reservation
     form_class = ReserveForm
     template_name = 'booking/reserve.html'
-    # success_url = reverse_lazy('booking:single_reservation')
+   
    
 
     def form_valid(self, form):
@@ -56,7 +56,7 @@ class ReserveViewList(LoginRequiredMixin,  generic.ListView):
     template_name = 'reservation_list.html'
 
     def get_queryset(self):
-        return Reservation.objects.all()
+        return Reservation.objects.filter(user=self.request.user)
 
         # user = self.request.user
         # return Reservation.objects.filter(user=user), to get only one reservation by a user
@@ -81,7 +81,8 @@ def single_reservation(request, pk):
 def cancel_reservation(request, reservation_id ):
     """ This view will cancel a booking. """
     reservation = get_object_or_404(Reservation, pk=reservation_id)
-     
+    
+ 
 
     if reservation.user == request.user:
         reservation.delete()
@@ -89,6 +90,8 @@ def cancel_reservation(request, reservation_id ):
     else:
         messages.add_message(request, messages.ERROR, 'There was an error cancelling your reservation,please check the details entered and try again. If the problem persists please contact the restaurant via telephone. ')
     return HttpResponseRedirect(reverse('booking:reserve'))
+
+  
    
 
 
@@ -102,13 +105,14 @@ def update_reservation(request, reservation_id):
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Your reservation has been updated successfully!')
 
-    else:
-        pass
-            # messages.add_message(request, messages.ERROR, 'Error updating your reservation!')
-    context = {'form': form}
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating your reservation!')
+        
+        
+    context = {'form': form, 'reservation': change }
     
 
-    return render(request, 'booking/reserve.html', context)
+    return render(request, 'booking/update.html', context)
 
 
 

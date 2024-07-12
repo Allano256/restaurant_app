@@ -35,29 +35,8 @@ body, html {
 .button {
     display: inline;
    
-    
+   
 }
-
-
-.button button {
-  border: none;
-  background-color: rgba(0,0,0, 0.3);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 3px;
-  border: white;
-  
-}
-
-.nav {
-    display:inline ;
-}
-
 
 .button1:hover  {
     background-color: #34582e;
@@ -92,7 +71,13 @@ body, html {
 }
 
 h2, p {
-    color: rgb(185, 44, 44);
+    color: #160202;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.main {
+    color: #e2d9d9;
     margin: 0;
     letter-spacing: 3px;
 }
@@ -142,9 +127,7 @@ footer{
     text-align: center;
 }
 
-.overlay {
-    position: relative;
-}
+
 
 form { 
     margin: 3rem auto;
@@ -229,11 +212,19 @@ button:active {
     display: none;
 }
 
-.modal {
-    position: absolute;
-
-}
-
-.overlay{
-    display: absolute;
-}
+@media only screen and (max-width: 600px) {
+    #head {
+        height: 150px;
+        position: fixed;
+        background-color: rgba(0,0,0, 0.3);
+        width: 100%;
+        color: white;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 2rem;
+       
+        
+    }
+    
+  }

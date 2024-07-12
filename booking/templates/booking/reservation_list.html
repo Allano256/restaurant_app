@@ -26,17 +26,19 @@
        
         {% for reservation in object_list %}
         <div class="tin">
-            <div class="tin-tin">
+           
+            <div class="tin-tin">              
             <h1>Reservation list.</h1>
             <h1>NAME: {{reservation.name_user}} </h1>
             <h1>DATE: {{reservation.date_of_month}}</h1>
             <h3> ID :{{ reservation.id}}</h3>
-            <a href="{% url 'booking:single_reservation' reservation.id %}">single reservation</a>
+            <a href="{% url 'booking:single_reservation' reservation.id %}">A list of your reservations.</a>
             </div>
             
-           
         </div>
-        
+        {% empty%}
+
+        <h1>You have no reservation.</h1>
 
        {% endfor %}
 </div>
