@@ -55,8 +55,8 @@ SITE_ID = 1
 We need to add SITE_ID = 1 so that Django can handle multiple sites from one database.
 The redirection URLs will redirect us back to home page after we've logged in or loggedout.
 """
-LOGIN_REDIRECT_URL = '/booking'
-LOGOUT_REDIRECT_URL = '/booking'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # AUTHENTICATION_BACKENDS = [
   
