@@ -82,8 +82,6 @@ def cancel_reservation(request, reservation_id ):
     """ This view will cancel a booking. """
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     
- 
-
     if reservation.user == request.user:
         reservation.delete()
         messages.add_message(request, messages.SUCCESS, 'Reservation has been deleted successfully!')
@@ -93,9 +91,6 @@ def cancel_reservation(request, reservation_id ):
 
   
    
-
-
-
 def update_reservation(request, reservation_id):
     change = get_object_or_404(Reservation, pk=reservation_id)
     form = ReserveForm(instance=change)

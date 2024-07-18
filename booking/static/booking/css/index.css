@@ -188,7 +188,7 @@ button:active {
 
 
 .tin {
-    display: flex;
+    display: block;
     justify-content: center;
    
 }
