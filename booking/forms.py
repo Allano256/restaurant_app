@@ -40,11 +40,14 @@ class ReserveForm(forms.ModelForm):
             "message_to_restaurant":"Leave a message to the restaurant"
 
         }
-        widgets = {
-            'date_of_month':  DateInput(),
-            'time_of_day': TimeInput(),
-         }
 
+        time_of_day = forms.TimeField(
+        widget=forms.TimeInput(attrs={'type': 'datetime-local'}),
+        input_formats=['%Y-%m-%dT%H:%M']
+    )
+
+
+       
 class CancelForm(forms.ModelForm):
     """
     This will be displayed for the user to cancel a reservation.
