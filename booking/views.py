@@ -3,7 +3,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from .forms import ReserveForm, CancelForm 
+from .forms import ReserveForm, CancelForm , EditForm
 from django.views import View, generic
 from django.contrib import messages
 from django.views.generic.edit import FormView,  UpdateView
@@ -93,7 +93,7 @@ def cancel_reservation(request, reservation_id ):
    
 def update_reservation(request, reservation_id):
     change = get_object_or_404(Reservation, pk=reservation_id)
-    form = ReserveForm(instance=change)
+    form = EditForm(instance=change)
     if request.method == 'POST':
         form = ReserveForm(request.POST, instance= change)
         if form.is_valid() and change.user == request.user:

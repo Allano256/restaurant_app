@@ -41,13 +41,17 @@ class ReserveForm(forms.ModelForm):
 
         }
 
-        time_of_day = forms.TimeField(
-        widget=forms.TimeInput(attrs={'type': 'datetime-local'}),
-        input_formats=['%Y-%m-%dT%H:%M']
-    )
+    #     time_of_day = forms.TimeField(
+    #     widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
+    #     input_formats=['%Y-%m-%dT%H:%M']
+    # )
 
 
-       
+        widgets = {
+            'date_of_month':  DateInput(),
+            'time_of_day': TimeInput(),
+         }
+
 class CancelForm(forms.ModelForm):
     """
     This will be displayed for the user to cancel a reservation.
@@ -59,4 +63,39 @@ class CancelForm(forms.ModelForm):
             'name_user': 'Name',
             
         }
+
+        time_of_day = forms.TimeField(
+        widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
+        input_formats=['%Y-%m-%dT%H:%M']
+    )
     
+
+class EditForm(forms.ModelForm):
+    """
+    Here we infer our Review form from the Reservation model.
+    """
+    class Meta:
+        model = Reservation
+        # fields = '__all__'
+        exclude = ['user', 'status']
+        labels = {
+            "name_user":"Name",
+            "email_user":"Email",
+            "phone_user":"Phone Number",
+            "number_of_guests":"Number of Guests",
+            "date_of_month":"Date",
+            "time_of_day":"Time",
+            "message_to_restaurant":"Leave a message to the restaurant"
+
+        }
+
+        time_of_day = forms.TimeField(
+        widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
+        input_formats=['%Y-%m-%dT%H:%M']
+    )
+
+
+        # widgets = {
+        #     'date_of_month':  DateInput(),
+        #     'time_of_day': TimeInput(),
+        #  }
