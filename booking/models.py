@@ -17,7 +17,7 @@ class Reservation(models.Model):
     name_user = models.CharField(max_length=50)
     email_user = models.EmailField(max_length=50, blank=True)
     phone_user = models.CharField(max_length=50 , default =None)
-    number_of_guests = models.IntegerField(default=0,)
+    number_of_guests = models.IntegerField()
     date_of_month = models.DateField(default=None)
     time_of_day = models.TimeField(default=None)
     message_to_restaurant = models.TextField(max_length=100, blank=True)

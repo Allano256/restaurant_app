@@ -21,6 +21,12 @@ class TimeInput(forms.DateInput):
     """
     input_type = 'time'
 
+class NumberInput(forms.NumberInput):
+    """
+    Create a number picker
+    """
+    input_type = 'number'
+
 
 
 class ReserveForm(forms.ModelForm):
@@ -45,6 +51,7 @@ class ReserveForm(forms.ModelForm):
         widgets = {
             'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
             'time_of_day': TimeInput(),
+            'number_of_guests': forms.NumberInput(attrs={'min': '1'})
          }
 
         def actual_date(self):
@@ -55,6 +62,15 @@ class ReserveForm(forms.ModelForm):
                 raise forms.ValidationError('You cannot book a date in the past')
 
             return reservation_date
+
+        def number_guests(self):
+            guests_allowed =self.cleaned_data['number_of_guests']
+            if guests_allowed <= 0:
+                raise forms.ValidationError('Please enter numbers from 1 upwards!')
+          
+            return guests_allowed 
+
+        
 
 
 
@@ -102,6 +118,20 @@ class EditForm(forms.ModelForm):
                 raise forms.ValidationError('You cannot book a date in the past')
 
             return reservation_date
+
+        def number_guests(self):
+            guests_allowed =self.cleaned_data['number_of_guests']
+            if guests_allowed < 0:
+                raise forms.ValidationError('Please enter numbers from 1 upwards!')
+          
+            return guests_allowed 
+
+        def number_guests(self):
+            guests_allowed =self.cleaned_data['number_of_guests']
+            if guests_allowed <= 0:
+                raise forms.ValidationError('Please enter numbers from 1 upwards!')
+          
+            return guests_allowed 
           
 
 
@@ -113,6 +143,6 @@ class EditForm(forms.ModelForm):
    
 
         widgets = {
-            'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
-            
+            'date_of_month': forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
+            'number_of_guests': forms.NumberInput(attrs={'min': '1'})
          }
