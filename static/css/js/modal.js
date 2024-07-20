@@ -24,7 +24,7 @@ btnCloseModal.addEventListener('click', closeModal );
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
       let reservationId = e.target.getAttribute("data-id");
-      cancelConfirm.href = `/booking/cancel/${reservationId}`;
+      cancelConfirm.href = `/cancel/${reservationId}`;
       // closeModal.add();
     });
   }
