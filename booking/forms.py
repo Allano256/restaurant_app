@@ -91,7 +91,12 @@ class EditForm(forms.ModelForm):
 
         time_of_day = forms.TimeField(
         widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
-        input_formats=['%Y-%m-%dT%H:%M']
+        input_formats=['%Y-%m-%dT%H:%M'])
+
+        date_of_month = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date', })
+        # input_formats=['%Y-%m-%dT%H:%M']
+
     )
 
 
