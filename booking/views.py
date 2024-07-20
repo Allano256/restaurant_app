@@ -89,7 +89,7 @@ def cancel_reservation(request, reservation_id ):
         messages.add_message(request, messages.ERROR, 'There was an error cancelling your reservation,please check the details entered and try again. If the problem persists please contact the restaurant via telephone. ')
     return HttpResponseRedirect(reverse('booking:starting_page'))
 
-  
+
    
 def update_reservation(request, reservation_id):
     change = get_object_or_404(Reservation, pk=reservation_id)

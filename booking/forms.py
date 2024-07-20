@@ -4,6 +4,7 @@ from django import forms
 from .models import Reservation
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
+from datetime import date
 
 
 
@@ -41,16 +42,23 @@ class ReserveForm(forms.ModelForm):
 
         }
 
-    #     time_of_day = forms.TimeField(
-    #     widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
-    #     input_formats=['%Y-%m-%dT%H:%M']
-    # )
-
-
         widgets = {
-            'date_of_month':  DateInput(),
+            'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
             'time_of_day': TimeInput(),
          }
+
+        def actual_date(self):
+            reservation_date=self.cleaned_data['date_of_month']
+            today = date.today()
+
+            if reservation_date < now:
+                raise forms.ValidationError('You cannot book a date in the past')
+
+            return reservation_date
+
+
+
+
 
 class CancelForm(forms.ModelForm):
     """
@@ -64,10 +72,7 @@ class CancelForm(forms.ModelForm):
             
         }
 
-        time_of_day = forms.TimeField(
-        widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
-        input_formats=['%Y-%m-%dT%H:%M']
-    )
+     
     
 
 class EditForm(forms.ModelForm):
@@ -89,18 +94,25 @@ class EditForm(forms.ModelForm):
 
         }
 
+        def actual_date(self):
+            reservation_date=self.cleaned_data['date_of_month']
+            today = date.today()
+
+            if reservation_date < now:
+                raise forms.ValidationError('You cannot book a date in the past')
+
+            return reservation_date
+          
+
+
+
         time_of_day = forms.TimeField(
         widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
         input_formats=['%Y-%m-%dT%H:%M'])
 
-        date_of_month = forms.DateField(
-        widget=forms.DateInput(attrs={'type': 'date', })
-        # input_formats=['%Y-%m-%dT%H:%M']
+   
 
-    )
-
-
-        # widgets = {
-        #     'date_of_month':  DateInput(),
-        #     'time_of_day': TimeInput(),
-        #  }
+        widgets = {
+            'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
+            
+         }
