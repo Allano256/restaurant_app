@@ -8,6 +8,7 @@ from datetime import date
 
 
 
+
 class DateInput(forms.DateInput):
     """
     This class will create a date picker.
@@ -26,6 +27,8 @@ class NumberInput(forms.NumberInput):
     Create a number picker
     """
     input_type = 'number'
+
+
 
 
 
@@ -51,7 +54,9 @@ class ReserveForm(forms.ModelForm):
         widgets = {
             'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
             'time_of_day': TimeInput(),
-            'number_of_guests': forms.NumberInput(attrs={'min': '1'})
+            'number_of_guests': forms.NumberInput(attrs={'min': '1'}),
+            'phone_user': forms.TextInput(attrs={'pattern': '[0-9]+', 'title': 'Enter numbers only' }),
+           
          }
 
         def actual_date(self):
@@ -69,6 +74,14 @@ class ReserveForm(forms.ModelForm):
                 raise forms.ValidationError('Please enter numbers from 1 upwards!')
           
             return guests_allowed 
+
+        def phone_number_allowed(self):
+            numbers_allowed = self.cleaned_data['phone_user']
+         
+            if not re.match(r'^\d+$', numbers_allowed):
+                raise ValidationError('Please use only numbers')
+
+            return numbers_allowed
 
         
 
@@ -132,6 +145,14 @@ class EditForm(forms.ModelForm):
                 raise forms.ValidationError('Please enter numbers from 1 upwards!')
           
             return guests_allowed 
+
+        def phone_number_allowed(self):
+            numbers_allowed = self.cleaned_data['phone_user']
+         
+            if not re.match(r'^\d+$', numbers_allowed):
+                raise ValidationError('Please use only numbers')
+
+            return numbers_allowed
           
 
 
@@ -144,5 +165,6 @@ class EditForm(forms.ModelForm):
 
         widgets = {
             'date_of_month': forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
-            'number_of_guests': forms.NumberInput(attrs={'min': '1'})
+            'number_of_guests': forms.NumberInput(attrs={'min': '1'}),
+            'phone_user': forms.TextInput(attrs={'pattern': '[0-9]+', 'title': 'Enter numbers only' }),
          }
