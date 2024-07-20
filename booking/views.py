@@ -87,7 +87,7 @@ def cancel_reservation(request, reservation_id ):
         messages.add_message(request, messages.SUCCESS, 'Reservation has been deleted successfully!')
     else:
         messages.add_message(request, messages.ERROR, 'There was an error cancelling your reservation,please check the details entered and try again. If the problem persists please contact the restaurant via telephone. ')
-    return HttpResponseRedirect(reverse('booking:reserve'))
+    return HttpResponseRedirect(reverse('booking:starting_page'))
 
   
    
