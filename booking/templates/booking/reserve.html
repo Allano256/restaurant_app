@@ -27,11 +27,27 @@
      <form action="{% url 'booking:reserve' %}"   method="POST">
        {% csrf_token%}
 
-       <div class="form-control  ">
-        {{form}}
-        
+      
+       <div class="form-control  "> 
+
+      
+        <!-- {{form}} -->
+
+        {% for field in form %}
+        <div>
+            <label class="{% if field.field.required %}required-field{% endif %}">
+                {{ field.label }}: 
+            </label>
+            {{ field }}
+            {% if field.errors %}
+                <div style="color: red;">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
        </div>
-    
+       
        <button type="submit"  value="submit">Submit </button>
        
      </form>

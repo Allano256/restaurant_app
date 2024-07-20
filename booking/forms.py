@@ -139,12 +139,7 @@ class EditForm(forms.ModelForm):
           
             return guests_allowed 
 
-        def number_guests(self):
-            guests_allowed =self.cleaned_data['number_of_guests']
-            if guests_allowed <= 0:
-                raise forms.ValidationError('Please enter numbers from 1 upwards!')
-          
-            return guests_allowed 
+       
 
         def phone_number_allowed(self):
             numbers_allowed = self.cleaned_data['phone_user']
@@ -153,9 +148,8 @@ class EditForm(forms.ModelForm):
                 raise ValidationError('Please use only numbers')
 
             return numbers_allowed
-          
 
-
+      
 
         time_of_day = forms.TimeField(
         widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
