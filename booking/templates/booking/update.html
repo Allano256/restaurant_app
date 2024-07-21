@@ -23,7 +23,8 @@
 
     {% block content%}
    
-     
+    {% include 'booking/includes/navbar.html'%}
+
      <form action="{% url 'booking:update' reservation.id %}"   method="POST">
        {% csrf_token%}
 

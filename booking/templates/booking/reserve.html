@@ -22,6 +22,8 @@
 
 
     {% block content%}
+
+    {% include 'booking/includes/navbar.html'%}
    
      
      <form action="{% url 'booking:reserve' %}"   method="POST">
