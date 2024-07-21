@@ -54,7 +54,7 @@ class ReserveForm(forms.ModelForm):
         widgets = {
             'date_of_month':  forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),
             'time_of_day': TimeInput(),
-            'number_of_guests': forms.NumberInput(attrs={'min': '1'}),
+            'number_of_guests': forms.NumberInput(attrs={'min': '1', 'max':'10'}),
             'phone_user': forms.TextInput(attrs={'pattern': '[0-9]+', 'title': 'Enter numbers only' }),
            
          }
@@ -70,8 +70,8 @@ class ReserveForm(forms.ModelForm):
 
         def number_guests(self):
             guests_allowed =self.cleaned_data['number_of_guests']
-            if guests_allowed <= 0:
-                raise forms.ValidationError('Please enter numbers from 1 upwards!')
+            if not( 1 <= guests_allowed <= 10) :
+                raise forms.ValidationError('Number of guests can be between 1 and 10 only!')
           
             return guests_allowed 
 
@@ -136,7 +136,11 @@ class EditForm(forms.ModelForm):
             guests_allowed =self.cleaned_data['number_of_guests']
             if guests_allowed < 0:
                 raise forms.ValidationError('Please enter numbers from 1 upwards!')
-          
+                if not ( 1 <= guests_allowed <= 10) :
+                    raise forms.ValidationError('Number of guests can only be between 1 and 10 only!')
+                
+
+
             return guests_allowed 
 
        
