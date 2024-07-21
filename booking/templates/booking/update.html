@@ -28,7 +28,21 @@
        {% csrf_token%}
 
        <div class="form-control  ">
-        {{form}}
+        <!-- {{form}} -->
+
+        {% for field in form %}
+        <div>
+            <label class="{% if field.field.required %}required-field{% endif %}">
+                {{ field.label }}: 
+            </label>
+            {{ field }}
+            {% if field.errors %}
+                <div style="color: red;">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
         
        </div>
     
