@@ -1,4 +1,4 @@
-    {% load static %}
+{% load static %}
 
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -7,88 +7,96 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Bootstrap CSS -->
-      <!-- <link href=
+    <!-- Bootstrap CSS -->
+    <!-- <link href=
       "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
               rel="stylesheet" integrity=
       "sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
               crossorigin="anonymous" /> -->
-         
-             
-    <title> {% block title %}  {% endblock%}</title>
 
-   {% block css_files %}
+
+    <title> {% block title %} {% endblock%}</title>
+
+    {% block css_files %}
 
     {% endblock %}
 
 </head>
+
 <body>
-  
+
     <header id="head">
-        <div > <a  href="{% url 'booking:starting_page'%}"><div class="logo"  > <h1>JO's restaurant</h1></div></a></div>
-       
-       
-            <!-- <ul> -->
-                {% if user.is_authenticated %}
-                <!-- <li class="nav-item"> -->
-                    <div class="nav">
-                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                <!-- </li> -->
-                {% else %}
-                <!-- <li class="nav-item"> -->
-                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                        href="{% url 'account_signup' %}">Register</a>
-                <!-- </li> -->
-                <!-- <li class="nav-item"> -->
-                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                <!-- </li> -->
-                {% endif %}
-            <!-- </ul> -->
-        </div>
-     
-       
+        <div> <a href="{% url 'booking:starting_page'%}">
+                <div class="logo">
+                    <h1>JO's restaurant</h1>
+                </div>
+            </a></div>
 
         <div class="button">
             {% if user.is_authenticated %}
-             <div>
-             <a href="{% url 'booking:reserve' %}"
-             class="button1 "> <p id="paragraph">Make a Reservation</p></a>
-             <a href="{% url 'booking:reservations' %}"
-             class="button1 "> <p id="paragraph">Show Reservation</p></a>
+            <div>
+                <a href="{% url 'booking:reserve' %}" class="button1 ">
+                    <p id="paragraph">Make a Reservation</p>
+                </a>
+                <a href="{% url 'booking:reservations' %}" class="button1 ">
+                    <p id="paragraph">Show Reservation</p>
+                </a>
 
 
-             </div>
-             {% endif%}
+            </div>
+        </div>
 
-             
-        </div>  
+
+
+
+        {% endif%}
+
+        <!-- <ul> -->
+        {% if user.is_authenticated %}
+        <!-- <li class="nav-item"> -->
+        <div class="nav">
+            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_logout' %}">Logout</a>
+            <!-- </li> -->
+            {% else %}
+            <!-- <li class="nav-item"> -->
+            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_signup' %}">Register</a>
+            <!-- </li> -->
+            <!-- <li class="nav-item"> -->
+            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_login' %}">Login</a>
+            <!-- </li> -->
+            {% endif %}
+            <!-- </ul> -->
+
+
+        </div>
     </header>
 
     <!-- This enables messages to be displayed in templates. -->
-     {% if messages%}
-     <ul>
-          {% for message in messages %}
-          <li> {{message}}</li>
-          {% endfor %}
-     </ul>
-     {% endif %}
+    {% if messages%}
+    <ul>
+        {% for message in messages %}
+        <li> {{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
-     <!-- This will will enable feeding in of content on different pages. -->
+    <!-- This will will enable feeding in of content on different pages. -->
     {% block content%}
 
-    
+
 
     {% endblock%}
 
-    <script src=
-"https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" 
-        integrity=
-"sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-        crossorigin="anonymous">
-    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+        </script>
 </body>
 
 
