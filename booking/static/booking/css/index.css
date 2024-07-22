@@ -101,6 +101,13 @@ a {
     
 } 
 
+.nav-item  > nav-link{
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+
 
 
 footer{
@@ -216,6 +223,11 @@ button:active {
 .required-field::after {
     content: " *";
     color: red;
+}
+
+/* css for logout,login, signup */
+.navbar {
+    height: 150px;
 }
 
 @media only screen and (max-width: 600px) {
