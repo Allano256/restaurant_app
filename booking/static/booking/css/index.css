@@ -61,6 +61,20 @@ body, html {
     
 }
 
+
+
+.within {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -20%);
+    font-size: 50px;
+    color: #e2d9d9;
+    margin: 0;
+    letter-spacing: 3px;
+    
+  }
+
 .text {
     padding: 2rem 3rem;
     font-family: 'Poppins', sans-serif;
@@ -201,7 +215,7 @@ button:active {
 }
 
 .tin-tin {
-    /* position: relative; */
+    
     margin: 20px;
     padding: 20px;
 }
