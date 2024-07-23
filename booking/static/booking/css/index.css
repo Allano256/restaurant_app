@@ -182,23 +182,25 @@ form {
     box-shadow: 0 2px 8px rgba(0,0,0);
 }
 
- /* a {
+/* input {
    
-    cursor: pointer;
-    padding:0.7rem 1.5rem  ;
-    border-radius: 12px;
+   
+} */
+
+
+
+button {
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
     background-color: #34582e;
     color: white;
-    border: 1px solid #1f0050;
-    text-decoration: none;
-}  */
-
-
-
+}
 button:hover,
-button:active {
-    background-color: rgb(163, 126, 198);
+button:active  {
+    background-color: rgb(236, 207, 20);
     border-color: #320777;
+   
 }
 
 .form-control {
