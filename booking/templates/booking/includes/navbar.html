@@ -1,7 +1,7 @@
 {% load static %}
 
 <header id="head">
-    <div> <a href="{% url 'booking:starting_page'%}">
+    <div> <a class="nav-nav-link" href="{% url 'booking:starting_page'%}">
             <div class="logo">
                 <h1>JO's restaurant</h1>
             </div>
@@ -10,10 +10,10 @@
     <div class="button">
         {% if user.is_authenticated %}
         <div>
-            <a href="{% url 'booking:reserve' %}" class="button1 ">
+            <a class="nav-nav-link" href="{% url 'booking:reserve' %}" class="button1 ">
                 <p id="paragraph">Make a Reservation</p>
             </a>
-            <a href="{% url 'booking:reservations' %}" class="button1 ">
+            <a class="nav-nav-link" href="{% url 'booking:reservations' %}" class="button1 ">
                 <p id="paragraph">Show Reservation</p>
             </a>
 
@@ -30,16 +30,16 @@
     {% if user.is_authenticated %}
     <!-- <li class="nav-item"> -->
     <div class="nav">
-        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+        <a class="nav-nav-link" class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_logout' %}">Logout</a>
         <!-- </li> -->
         {% else %}
         <!-- <li class="nav-item"> -->
-        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+        <a class="nav-nav-link" class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_signup' %}">Register</a>
         <!-- </li> -->
         <!-- <li class="nav-item"> -->
-        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+        <a class="nav-nav-link" class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_login' %}">Login</a>
         <!-- </li> -->
         {% endif %}
