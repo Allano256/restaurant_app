@@ -21,19 +21,20 @@
 {% block content %}
 
 {% include 'booking/includes/navbar.html'%}
-<div class="output">
+<div class="output grid-container">
   
        
         {% for reservation in object_list %}
-        <div class="tin">
+        <div class="tin grid-item ">
            
-            <div class="tin-tin">              
+            
+            
             <h1>Reservation </h1>
             <h1>NAME: {{reservation.name_user}} </h1>
             <h1>DATE: {{reservation.date_of_month}}</h1>
             
-            <a href="{% url 'booking:single_reservation' reservation.id %}">View reservation.</a>
-            </div>
+            <a class="nav-nav-link" href="{% url 'booking:single_reservation' reservation.id %}">View reservation.</a>
+        
             
         </div>
         {% empty%}
