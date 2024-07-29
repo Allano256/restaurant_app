@@ -1,6 +1,6 @@
 # restaurant_app
 
-This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with thye restaurant. All these features are the building blocks of thsi application,but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
+This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with the restaurant. All these features are the building blocks of thIS application, but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
 Its a responsive site as illustrated below.
 
 ![restaurant_app](booking/static/booking/images/responsive.png)
@@ -11,8 +11,8 @@ Existing Features
 
 <ul> 
  <ol>Navigation Bar </ol>
- <li>The navigation bar is featurecd on all the different pages of the application, having features like signup, log in, log out, make reservation, show reservation. </li>
- <li>These different features enable the user to register their details as customers, be able to login as registered users and make reservations. They can also always come back and make any changes to their reservation.</li>
+ <li>The navigation bar is featured on all the different pages of the application, having features like signup, log in, log out, make reservation, show reservation. </li>
+ <li>These different features enable the user to register their details as customers, be able to log in as registered users and make reservations. They can also always come back and make any changes to their reservation.</li>
 </ul>
 
 ![restaurant_app](booking/static/booking/images/navbar.png)
@@ -22,6 +22,7 @@ Existing Features
 <li>The landing page has three distinctive images of food and a midsection with a welcome message.</li>
 <li>The bright images used in this section capture the customers eye and reflect the quality of food that the user should expect at the restaurant.  </li>
 </ul>
+
 ![restaurant_app](booking/static/booking/images/landing1.png)
 ![restaurant_app](booking/static/booking/images/landing2.png)
 ![restaurant_app](booking/static/booking/images/landing3.png)
