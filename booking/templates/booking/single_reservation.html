@@ -33,7 +33,7 @@
     
     <h2>GUESTS: {{reservation.number_of_guests}}</h2>
     
-    <button class="btn  show-modal  btn-delete submit " data-id='{{ reservation.id }}' > Delete </button>
+    <button class="btn nav-nav-link  show-modal  btn-delete  " data-id='{{ reservation.id }}' > Delete </button>
     <a  class="btn nav-nav-link"   href="{% url 'booking:update' reservation.id %}"> Edit </a>
     </div>
 
@@ -41,15 +41,17 @@
 
 
  <div class="modal hidden">
+   
   <p>Are you sure you want to delete this reservation?</p>
 
-    <button class="btn close-modal submit">
-        No
-    </button>
+    <button class="btn nav-nav-link close-modal ">No</button>
    
+
     <a class="btn nav-nav-link"   id="cancelConfirm" href="{% url 'booking:cancel' reservation.id %}" class="btn">Yes</a>
-     
- </div>
+</div>
+
+
+ <div class="overlay hidden"></div>
 
  {%endif %}
 
