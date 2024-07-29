@@ -19,7 +19,7 @@ Existing Features
 
 <ul> 
 <ol>The landing page </ol>
-<li>The landing page has three distinctive images of food and a midsection with a welcome message.</li>
+<li>The landing page has four distinctive images of food and a midsection with a welcome message.</li>
 <li>The bright images used in this section capture the customers eye and reflect the quality of food that the user should expect at the restaurant.  </li>
 </ul>
 
@@ -68,12 +68,14 @@ Existing Features
 <ol>Log in</ol>
 <li>This page will allow the user to log in after registering their credentials. </li>
 </ul>
+
 ![restaurant_app](booking/static/booking/images/login.png)
 
 <ul>
 <ol>Log Out</ol>
 <li>The log out page enables the user to exit the application after making their reservation.</li>
 </ul>
+
 ![restaurant_app](booking/static/booking/images/logout.png)
 
 
@@ -83,15 +85,25 @@ Existing Features
 <li>HTML, W3C was used to validate the project for any errors. The project did not have any errors an was successful.</li>
 <li>Manual testing was done on the different parts of the software to ensure that it works as it should</li>
 <li>Manual testing was done on the form to ensure that fields that have an asterik must be filledout for the form to be considered valid.</li>
+
 ![restaurant_app](booking/static/booking/images/formTesting.png)
+
 <li>The log in form was also tested to ensure that only signedup users can log into the application. This is indicated by the message provided to the user incase wrong details are entered during the login process.</li>
+
 ![restaurant_app](booking/static/booking/images/loginTest.png)
+
 <li>The site wass tested to ensure interaction with the user by always displaying a message to the user to indicate what part of the process they are at.</li>
+
 ![restaurant_app](booking/static/booking/images/login_message.png)
+
 ![restaurant_app](booking/static/booking/images/message2.png)
+
 <li>The application setup to ensure that when a customer comes to edit their reservation, a prefilled form exists for updating.</li>
+
 ![restaurant_app](booking/static/booking/images/edit.png)
+
 <li>The application was also tested to ensure that a customer only books valid dates and they cant book dates that have passed.</li>
+
 ![restaurant_app](booking/static/booking/images/dateTest.png)
 
 <li>PYTHON</li>
@@ -116,6 +128,7 @@ The site was  deployed on Heroku and Github.
 <li>Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.</li>
 
 The deployed version can be found via this link on Heroku,
+
 ![restaurant_app](https://restaurant256-cba0e80966cc.herokuapp.com/)
 
 </ul>
@@ -124,16 +137,22 @@ The deployed version can be found via this link on Heroku,
 <ul>
 <ol>Content</ol>
 <li> The images on the hero section were taken from pexels</li>
+
 [pexels](https://pexels.com/sv-se/)
+
 <li>The icons used in the footer were taken from Font awesome.</li>
+
 [font awesome](https://fontawesome.com)
+
 </ul>
 
 
 ## Colors used
 
 We used color green for all of our buttons and white for the text.(#ffffff and hex(34582e))
+
 ![restaurant_app](booking/static/booking/images/green.png)
+
 ![restaurant_app](booking/static/booking/images/white1.png)
 
 ## Issues faced
