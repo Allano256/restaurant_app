@@ -1,4 +1,4 @@
-# restaurant_app
+# JO's restaurant-app
 
 This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with the restaurant. All these features are the building blocks of thIS application, but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
 Its a responsive site as illustrated below.
