@@ -1,8 +1,9 @@
 # restaurant_app
 
 This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with thye restaurant. All these features are the building blocks of thsi application,but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
+Its a responsive site as illustrated below.
 
-![restaurant_app]()
+![restaurant_app](booking/static/booking/images/responsive.png)
 
 # Features
 
@@ -81,7 +82,7 @@ Existing Features
 
 
 
-![css-html-project](assets/images/html%20validator.png)
+![restaurant_app]()
 
 The live link can be found here;
 
