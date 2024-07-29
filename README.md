@@ -1,6 +1,8 @@
 # JO's restaurant-app
 
-This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with the restaurant. All these features are the building blocks of thIS application, but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
+This restaurant booking application is designed to help restaurant owners keep track of their bookings and also enable users to easily make restaurant reservations. This application offers the user the ability to make a reservation, edit their reservation or even cancel a reservation without necessarily having to get intouch with the restaurant.
+
+All these features are the building blocks of thIS application, but also the site owner has the ability to monitor the inflow of reservations and better plan his or her day basing on the reservations made. 
 Its a responsive site as illustrated below.
 
 ![restaurant_app](booking/static/booking/images/responsive.png)
@@ -10,7 +12,7 @@ Its a responsive site as illustrated below.
 Existing Features
 
 <ul> 
- <ol>Navigation Bar </ol>
+ <ol> <bold> Navigation Bar</bold> </ol>
  <li>The navigation bar is featured on all the different pages of the application, having features like signup, log in, log out, make reservation, show reservation. </li>
  <li>These different features enable the user to register their details as customers, be able to log in as registered users and make reservations. They can also always come back and make any changes to their reservation.</li>
 </ul>
@@ -18,7 +20,7 @@ Existing Features
 ![restaurant_app](booking/static/booking/images/navbar.png)
 
 <ul> 
-<ol>The landing page </ol>
+<ol> <bold>The landing page</bold> </ol>
 <li>The landing page has four distinctive images of food and a midsection with a welcome message.</li>
 <li>The bright images used in this section capture the customers eye and reflect the quality of food that the user should expect at the restaurant.  </li>
 </ul>
@@ -31,7 +33,7 @@ Existing Features
 
 
 <ul> 
-<ol>The Footer</ol>
+<ol> <bold>The Footer</bold> </ol>
 <li>The footer section includes the links to the restaurants relevant social medias of JO's Restaurant and these links will open in a new tab for easier navigation.</li>
 <li>The footer is valuable to the user as it encourages them to keep connected via social media.</li>
 </ul>
@@ -39,14 +41,14 @@ Existing Features
 ![restaurant_app](booking/static/booking/images/foot.png)
 
 <ul> 
-<ol>Make a reservation</ol>
+<ol> <bold>Make a reservation</bold></ol>
 <li>This page provides the user with a form that he/she can fillout details,example their name,email, phone number,number of guests, date, expected time and also the possibility to leave a message to the restaurant.</li>
 </ul>
 
 ![restaurant_app](booking/static/booking/images/reserveForm.png)
 
 <ul> 
-<ol>Show reservation</ol>
+<ol> <bold>Show reservation</bold></ol>
 <li>This section of the application allows the user to view their reservation so that its accurate, plus a list of the other reservations that have been made. The user can further go in and view a specific reservation.</li>
 
 ![restaurant_app](booking/static/booking/images/booking_list.png)
@@ -57,7 +59,7 @@ Existing Features
 
 
 <ul>
-<ol>Register</ol>
+<ol><bold>Register</bold></ol>
 <li> The register or signup page allows the user to fillout a form with their details that are saved on the restaurants database, in so doing next time they come to the site to make a reservation their details are already available to ease to booking process.</li>
 <li>As a signedup user, they can have access to their booking and be able to make changes to their reservation if need be. They can edit their reservation or even cancel the reservation.</li>
 </ul>
@@ -65,14 +67,14 @@ Existing Features
 ![restaurant_app](booking/static/booking/images/register.png)
 
 <ul>
-<ol>Log in</ol>
+<ol><bold>Log in</bold></ol>
 <li>This page will allow the user to log in after registering their credentials. </li>
 </ul>
 
 ![restaurant_app](booking/static/booking/images/login.png)
 
 <ul>
-<ol>Log Out</ol>
+<ol><bold>Log Out</bold></ol>
 <li>The log out page enables the user to exit the application after making their reservation.</li>
 </ul>
 
@@ -81,8 +83,9 @@ Existing Features
 
 #Testing
 <ul>
-<ol>Validating Testing</ol>
+<ol><bold>Testing</bold>V</ol>
 <li>HTML, W3C was used to validate the project for any errors. The project did not have any errors an was successful.</li>
+
 <li>Manual testing was done on the different parts of the software to ensure that it works as it should</li>
 <li>Manual testing was done on the form to ensure that fields that have an asterik must be filledout for the form to be considered valid.</li>
 
@@ -119,9 +122,10 @@ The live link can be found here;
 
 </ul>
 
-#Deployment
+
 The site was  deployed on Heroku and Github.
 <ul>
+<ol><bold>Deployment</bold></ol>
 <li>The site was deployed to GitHub pages. The steps to deploy are as follows:
 <li>In the GitHub repository, navigate to the Settings tab</li>
 <li>From the source section drop-down menu, select the Master Branch </li>
@@ -135,7 +139,7 @@ The deployed version can be found via this link on Heroku,
 
 #Credits
 <ul>
-<ol>Content</ol>
+<ol><bold>Content</bold></ol>
 <li> The images on the hero section were taken from pexels</li>
 
 [pexels](https://pexels.com/sv-se/)
