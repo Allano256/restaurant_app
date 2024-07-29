@@ -25,13 +25,13 @@
  
  <div class="tin">
     <div class="tin-tin">
-     <p>A summary of your reservation</p>
+     <h3>A summary of your reservation</h3>
     
-    <h2>NAME: {{reservation.name_user}}</h2>
+    <p>NAME: {{reservation.name_user}}</p>
           
-    <h2>DATE: {{reservation.date_of_month}}</h2>
+    <p>DATE: {{reservation.date_of_month}}</p>
     
-    <h2>GUESTS: {{reservation.number_of_guests}}</h2>
+    <p>GUESTS: {{reservation.number_of_guests}}</p>
     
     <button class="btn nav-nav-link  show-modal  btn-delete  " data-id='{{ reservation.id }}' > Delete </button>
     <a  class="btn nav-nav-link"   href="{% url 'booking:update' reservation.id %}"> Edit </a>

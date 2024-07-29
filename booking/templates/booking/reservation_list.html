@@ -26,12 +26,10 @@
        
         {% for reservation in object_list %}
         <div class="tin grid-item ">
-           
-            
-            
-            <h1>Reservation </h1>
-            <h1>NAME: {{reservation.name_user}} </h1>
-            <h1>DATE: {{reservation.date_of_month}}</h1>
+        
+            <h3>Reservation </h3>
+            <p>NAME: {{reservation.name_user}} </p>
+            <p>DATE: {{reservation.date_of_month}}</p>
             
             <a class="nav-nav-link" href="{% url 'booking:single_reservation' reservation.id %}">View reservation.</a>
         
