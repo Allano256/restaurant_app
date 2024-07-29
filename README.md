@@ -153,7 +153,7 @@ We used color green for all of our buttons and white for the text.(#ffffff and h
 
 ![restaurant_app](booking/static/booking/images/green.png)
 
-![restaurant_app](booking/static/booking/images/white1.png)
+![restaurant_app](booking/static/booking/images/white.png)
 
 ## Issues faced
 
