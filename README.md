@@ -92,13 +92,13 @@ Existing Features
 
 ![restaurant_app](booking/static/booking/images/loginTest.png)
 
-<li>The site wass tested to ensure interaction with the user by always displaying a message to the user to indicate what part of the process they are at.</li>
+<li>The site was tested to ensure interaction with the user by always displaying a message to the user to indicate what part of the process they are at.</li>
 
 ![restaurant_app](booking/static/booking/images/login_message.png)
 
 ![restaurant_app](booking/static/booking/images/message2.png)
 
-<li>The application setup to ensure that when a customer comes to edit their reservation, a prefilled form exists for updating.</li>
+<li>The application was setup to ensure that when a customer comes to edit their reservation, a prefilled form exists for updating.</li>
 
 ![restaurant_app](booking/static/booking/images/edit.png)
 
@@ -111,7 +111,7 @@ Existing Features
 
 
 
-![restaurant_app](https://allano256.github.io/restaurant_app/)
+[restaurant_app](https://allano256.github.io/restaurant_app/)
 
 The live link can be found here;
 
@@ -129,7 +129,7 @@ The site was  deployed on Heroku and Github.
 
 The deployed version can be found via this link on Heroku,
 
-![restaurant_app](https://restaurant256-cba0e80966cc.herokuapp.com/)
+[restaurant_app](https://restaurant256-cba0e80966cc.herokuapp.com/)
 
 </ul>
 
