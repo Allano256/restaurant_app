@@ -1,10 +1,10 @@
-
+from datetime import datetime, date
 from django import forms
-
+from django.core.exceptions import ValidationError
 from .models import Reservation
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
-from datetime import date
+
 
 
 
@@ -36,7 +36,18 @@ class ReserveForm(forms.ModelForm):
     """
     Here we infer our Review form from the Reservation model.
     """
+   
     class Meta:
+
+        phone_user = forms.RegexField(
+        regex=r'^\+?1?\d{9,15}$', 
+        error_messages={
+            'invalid': 'Enter a valid phone number. This value may contain only numbers, and should be between 9 and 15 digits long.'
+        },
+        max_length=15
+        )
+
+    
         model = Reservation
         # fields = '__all__'
         exclude = ['user', 'status']
@@ -58,6 +69,8 @@ class ReserveForm(forms.ModelForm):
             'phone_user': forms.TextInput(attrs={'pattern': '[0-9]+', 'title': 'Enter numbers only' }),
            
          }
+
+     
 
         def actual_date(self):
             reservation_date=self.cleaned_data['date_of_month']
@@ -83,11 +96,9 @@ class ReserveForm(forms.ModelForm):
 
             return numbers_allowed
 
+       
+
         
-
-
-
-
 
 class CancelForm(forms.ModelForm):
     """
