@@ -116,7 +116,7 @@ The application layout was designed by hand on features of the landing page.
 
 
 <ul>
-<ol><strong>Features not implemented</strong> </ol>
+<ol> <strong>Features not implemented</strong> </ol>
 
 <li>We did not include a menue since the restaurant is meant to cover alot of dishes and we would never exhaust all the meals.</li>
 <li>The ability for a user to delete their account.</li>
@@ -132,12 +132,12 @@ The site tested HTML and CSS for the application.</li>
 
 ![restaurant_app](booking/static/booking/images/validation10.png)
 
-[restaurant_app](https://validator.w3.org/)
+[W3Validator](https://validator.w3.org/)
 
 <li>Javascript, JS Hint was used to validate the javascript for any errors. The project did not have any errors an was successful.
 Code from the javascript file was copied and pasted into the JS Hint application for tesing which didnt produce any errors.</li>
 
-[restaurant_app](https://jshint.com/)
+[jshint](https://jshint.com/)
 
 ![restaurant_app](booking/static/booking/images/js-valid.png)
 
