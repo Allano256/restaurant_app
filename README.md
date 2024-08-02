@@ -130,6 +130,8 @@ The application layout was designed by hand on features of the landing page.
 <li>HTML, W3C was used to validate the project for any errors. The project did not have any errors and was successfull.
 The site tested HTML and CSS for the application.</li>
 
+![restaurant_app](booking/static/booking/images/validation10.png)
+
 [restaurant_app](https://validator.w3.org/)
 
 <li>Javascript, JS Hint was used to validate the javascript for any errors. The project did not have any errors an was successful.
@@ -137,6 +139,7 @@ Code from the javascript file was copied and pasted into the JS Hint application
 
 [restaurant_app](https://jshint.com/)
 
+![restaurant_app](booking/static/booking/images/js-valid.png)
 
 
 <li>Manual testing was done on the different parts of the software to ensure that it works as it should</li>
