@@ -50,12 +50,7 @@ body, html {
    
    
 }
-.button2:hover  {
-    background-color: #34582e;
-    color: white;
-   
-   
-}
+
 #make {
     color: white;
     font-family: 'lato', sans-serif;
@@ -158,12 +153,7 @@ a {
    margin: 10px;
 }
 
-.nav-nav-link-link{
-    text-decoration: none !important ;
-   color: white !important;
-   border-radius: 20px;
-   margin: 10px;
-}
+
 
 ul {
     list-style-type: none;
