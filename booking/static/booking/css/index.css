@@ -50,10 +50,22 @@ body, html {
    
    
 }
-#paragraph {
+.button2:hover  {
+    background-color: #34582e;
+    color: white;
+   
+   
+}
+#make {
     color: white;
     font-family: 'lato', sans-serif;
 }
+
+#show {
+    color: white;
+    font-family: 'lato', sans-serif;
+}
+
 
 .image img {
     width: 100%;

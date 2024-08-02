@@ -3,7 +3,7 @@
 <header id="head">
     <div> <a class="no-background" href="{% url 'booking:starting_page'%}">
             <div class="logo">
-                <img src="/static/booking/images/logo.png" height="100px" width="100px"></img>
+                <img src="/static/booking/images/logo.png" height="100" width="100" alt="a logo image">
             </div>
         </a></div>
 
@@ -11,10 +11,10 @@
         {% if user.is_authenticated %}
         <div>
             <a class="nav-nav-link" href="{% url 'booking:reserve' %}" class="button1 ">
-                <p id="paragraph">Make a Reservation</p>
+                <p id="make">Make a Reservation</p>
             </a>
             <a class="nav-nav-link" href="{% url 'booking:reservations' %}" class="button1 ">
-                <p id="paragraph">Show Reservation</p>
+                <p id="show">Show Reservation</p>
             </a>
 
 
