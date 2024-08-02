@@ -259,6 +259,10 @@ It was important for me to do early deployment as i was able to see the output,s
 <li>Heroku - Deployment</li>
 </ul>
 
+# Layout
+
+The images used in the README.md to highlight the different sections of the page do not indicate a logo but instead a button as this change was made at the end of the project, because of the deadline it was to be cumbersome to change all the images in the document. 
+
 
 ## Feedback
 
