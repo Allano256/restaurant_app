@@ -13,7 +13,7 @@ Its a responsive site as illustrated below.
 
 
 # User stories
-Features in this project were structured based on the User stories.
+Features in this project were structured based on the
 [user stories](https://github.com/users/Allano256/projects/3)
 
 
@@ -108,9 +108,15 @@ Features in this project were structured based on the User stories.
 
 ![restaurant_app](booking/static/booking/images/logout.png)
 
+# Design
+
+The application layout was designed by hand on features of the landing page.
+![restaurant_app](booking/static/booking/images/design.png)
+
+
 
 <ul>
-<ol>Features not implemented</ol>
+<ol><strong>Features not implemented</strong> </ol>
 
 <li>We did not include a menue since the restaurant is meant to cover alot of dishes and we would never exhaust all the meals.</li>
 <li>The ability for a user to delete their account.</li>
@@ -121,7 +127,16 @@ Features in this project were structured based on the User stories.
 
 <ul>
 <ol><strong>Testing</strong></ol>
-<li>HTML, W3C was used to validate the project for any errors. The project did not have any errors an was successful.</li>
+<li>HTML, W3C was used to validate the project for any errors. The project did not have any errors and was successfull.
+The site tested HTML and CSS for the application.</li>
+
+[restaurant_app](https://validator.w3.org/)
+
+<li>Javascript, JS Hint was used to validate the javascript for any errors. The project did not have any errors an was successful.
+Code from the javascript file was copied and pasted into the JS Hint application for tesing which didnt produce any errors.</li>
+
+[restaurant_app](https://jshint.com/)
+
 
 
 <li>Manual testing was done on the different parts of the software to ensure that it works as it should</li>

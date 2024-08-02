@@ -1,56 +1,57 @@
 {% extends "base.html" %}
-    {% load static %}
+{% load static %}
 
-    {% block css_files %}
+{% block css_files %}
 
 
-    <link rel="stylesheet" type="text/css" href="{% static 'booking/css/index.css' %}">
-    <style>
+<link rel="stylesheet" type="text/css" href="{% static 'booking/css/index.css' %}">
+<style>
     #head {
-        
+
         position: relative;
-        
-    }</style>
-   
-    {% endblock%}
 
-     {% block title%} Make your booking {% endblock%}
-     
-       
+    }
+</style>
+
+{% endblock%}
+
+{% block title%} Make your booking {% endblock%}
 
 
-    {% block content%}
 
-    {% include 'booking/includes/navbar.html'%}
-   
-     
-     <form action="{% url 'booking:reserve' %}"   method="POST">
-       {% csrf_token%}
 
-      
-       <div class="form-control  "> 
+{% block content%}
 
-      
+{% include 'booking/includes/navbar.html'%}
+
+
+<form action="{% url 'booking:reserve' %}" method="POST">
+    {% csrf_token%}
+
+
+    <div class="form-control  ">
+
+
         <!-- {{form}} -->
 
         {% for field in form %}
         <div>
             <label class="{% if field.field.required %}required-field{% endif %}">
-                {{ field.label }}: 
+                {{ field.label }}:
             </label>
             {{ field }}
             {% if field.errors %}
-                <div style="color: red;">
-                    {{ field.errors }}
-                </div>
+            <div style="color: red;">
+                {{ field.errors }}
+            </div>
             {% endif %}
         </div>
-    {% endfor %}
-       </div>
-       
-       <button class="submit" type="submit"  value="submit">Submit </button>
-       
-     </form>
-       
+        {% endfor %}
+    </div>
 
-    {% endblock %}
+    <button class="submit" type="submit" value="submit">Submit </button>
+
+</form>
+
+
+{% endblock %}
