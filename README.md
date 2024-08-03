@@ -110,15 +110,15 @@ Features in this project were structured based on the
 
 # Design
 
-The application layout was designed by hand on features of the landing page.
-![restaurant_app](booking/static/booking/images/design.png)
+The application layout was designed by hand on figma highlighting the core parts of the application. As viewed in the diagram, the navigation area, a text area inbetween, sections with images and a footer to sum it up.
 
+![restaurant_app](booking/static/booking/images/design.png)
 
 
 <ul>
 <ol> <strong>Features not implemented</strong> </ol>
 
-<li>We did not include a menue since the restaurant is meant to cover alot of dishes and we would never exhaust all the meals.</li>
+<li>We did not include a menu since the restaurant is meant to cover alot of dishes and we would never exhaust all the meals.</li>
 <li>The ability for a user to delete their account.</li>
 <li>The ability for a user to reset their password incase they forgot it.</li>
 
