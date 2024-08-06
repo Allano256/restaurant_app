@@ -125,15 +125,15 @@ The database schema for the JO's restaurant project is based on the following mo
 
 ### Booking Model
 
-| Field                 | Type                   | Description                                      
-|-----------------------|--------------------------------------------------------------------|
-| user                  |ForeignKey              | Foreign key                                       
-| name_user             |CharField               | Name of user           
-| email_user            |CharField               | Email of user          
-| phone_user            |CharField               | Phone of user          
-| number_of_guests      |CharField               | Number of guests         
-| date_of_month         | DateField              | Date of the booking                           
-| time_of_day           | CharField              | Time for the booking                   
+| Field                 | Type                   | Description                               |      
+|-----------------------|------------------------|-------------------------------------------|
+| user                  |ForeignKey              |Foreign key                                |                                     
+| name_user             |CharField               | Name of user                              |           
+| email_user            |CharField               | Email of user                             |         
+| phone_user            |CharField               | Phone of user                             |         
+| number_of_guests      |CharField               | Number of guests                          |        
+| date_of_month         | DateField              | Date of the booking                       |                       
+| time_of_day           | CharField              | Time for the booking                      |                 
 
   
 
