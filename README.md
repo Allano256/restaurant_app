@@ -108,6 +108,35 @@ Features in this project were structured based on the
 
 ![restaurant_app](booking/static/booking/images/logout.png)
 
+<ul>
+<ol><strong>Admin panel</strong></ol>
+<li>The admin panel is accessible only by administrators,it shows the database details.</li>
+</ul>
+
+
+![restaurant_app](booking/static/booking/images/admin.png)
+
+
+
+## Database Schema
+
+The database schema for the JO's restaurant project is based on the following model:
+
+
+### Booking Model
+
+| Field                 | Type                   | Description                                      
+|-----------------------|--------------------------------------------------------------------|
+| user                  |ForeignKey              | Foreign key                                       
+| name_user             |CharField               | Name of user           
+| email_user            |CharField               | Email of user          
+| phone_user            |CharField               | Phone of user          
+| number_of_guests      |CharField               | Number of guests         
+| date_of_month         | DateField              | Date of the booking                           
+| time_of_day           | CharField              | Time for the booking                   
+
+  
+
 # Design
 
 The application layout was designed by hand on figma highlighting the core parts of the application. As viewed in the diagram, the navigation area, a text area inbetween, sections with images and a footer to sum it up.
