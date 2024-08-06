@@ -8,7 +8,7 @@ from django.views import View, generic
 from django.contrib import messages
 from django.views.generic.edit import FormView,  UpdateView
 from django.views.generic import ListView, DetailView
-from .models import Reservation, Cancel
+from .models import Reservation
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin

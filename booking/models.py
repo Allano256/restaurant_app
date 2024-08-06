@@ -16,7 +16,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name_user = models.CharField(max_length=50)
     email_user = models.EmailField(max_length=50, blank=True)
-    phone_user = models.CharField(max_length=15 , default =None)
+    phone_user = models.CharField(max_length=30, default =None)
     number_of_guests = models.IntegerField()
     date_of_month = models.DateField(default=None)
     time_of_day = models.TimeField(default=None)
@@ -26,16 +26,7 @@ class Reservation(models.Model):
     def __self__(self):
         return self.name_user
 
-   
-   
-
-class Cancel(models.Model):
-
-    review = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name="customer" )
-    name = models.CharField(max_length=50,)
-
-    def __str__(self):
-        return f"{self.name}"
+  
 
 
 

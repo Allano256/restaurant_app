@@ -108,6 +108,16 @@ Features in this project were structured based on the
 
 ![restaurant_app](booking/static/booking/images/logout.png)
 
+
+<ul>
+<ol><strong>Admin panel</strong></ol>
+<li>The admin panel is accessible only by administrators,it shows the database details.</li>
+</ul>
+
+
+![restaurant_app](booking/static/booking/images/admin.png)
+
+
 # Design
 
 The application layout was designed by hand on features of the landing page.
