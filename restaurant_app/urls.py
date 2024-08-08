@@ -17,14 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from booking import views as booking_views
-import debug_toolbar
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("booking.urls"), name = 'booking' ),
     path('booking/', include('django.contrib.auth.urls') ,),
-    path("__debug__/", include("debug_toolbar.urls")),
     path('accounts/', include('allauth.urls')),
 ]
 
