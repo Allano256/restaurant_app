@@ -10,10 +10,10 @@
     <div class="button">
         {% if user.is_authenticated %}
         <div>
-            <a class="nav-nav-link button1" href="{% url 'booking:reserve' %}" >
+            <a class="nav-nav-link button1" href="{% url 'booking:reserve' %}">
                 <p id="make">Make a Reservation</p>
             </a>
-            <a class="nav-nav-link  button1" href="{% url 'booking:reservations' %}" >
+            <a class="nav-nav-link  button1" href="{% url 'booking:reservations' %}">
                 <p id="show">Show Reservation</p>
             </a>
 
@@ -21,29 +21,26 @@
         </div>
     </div>
 
-  
-
 
     {% endif%}
 
-    <!-- <ul> -->
+
     {% if user.is_authenticated %}
-    <!-- <li class="nav-item"> -->
+
     <div class="nav">
-        <a  class="nav-nav-link  nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+        <a class="nav-nav-link  nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_logout' %}">Logout</a>
-        <!-- </li> -->
+
         {% else %}
-        <!-- <li class="nav-item"> -->
-        <a  class="nav-nav-link  nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+
+        <a class="nav-nav-link  nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_signup' %}">Register</a>
-        <!-- </li> -->
-        <!-- <li class="nav-item"> -->
-        <a  class="nav-nav-link  nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+
+        <a class="nav-nav-link  nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
             href="{% url 'account_login' %}">Login</a>
-        <!-- </li> -->
+
         {% endif %}
-        <!-- </ul> -->
+
 
 
     </div>

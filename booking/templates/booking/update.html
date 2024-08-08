@@ -3,9 +3,7 @@
 
     {% block css_files %}
 
-   
-  
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'booking/style.css' %}"> -->
+
     <link rel="stylesheet" type="text/css" href="{% static 'booking/css/index.css' %}">
     <style>
     #head {
@@ -19,8 +17,6 @@
      {% block title%} Make your booking {% endblock%}
      
        
-
-
     {% block content%}
    
     {% include 'booking/includes/navbar.html'%}
@@ -29,7 +25,7 @@
        {% csrf_token%}
 
        <div class="form-control  ">
-        <!-- {{form}} -->
+      
 
         {% for field in form %}
         <div>

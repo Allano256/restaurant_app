@@ -6,9 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
 
 
-
-
-
 class DateInput(forms.DateInput):
     """
     This class will create a date picker.
@@ -27,9 +24,6 @@ class NumberInput(forms.NumberInput):
     Create a number picker
     """
     input_type = 'number'
-
-
-
 
 
 class ReserveForm(forms.ModelForm):
@@ -96,10 +90,7 @@ class ReserveForm(forms.ModelForm):
 
             return numbers_allowed
 
-       
-
-        
-
+    
 class CancelForm(forms.ModelForm):
     """
     This will be displayed for the user to cancel a reservation.
@@ -113,8 +104,6 @@ class CancelForm(forms.ModelForm):
         }
 
      
-    
-
 class EditForm(forms.ModelForm):
     """
     Here we infer our Review form from the Reservation model.
@@ -164,13 +153,11 @@ class EditForm(forms.ModelForm):
 
             return numbers_allowed
 
-      
-
+    
         time_of_day = forms.TimeField(
         widget=forms.TimeInput(attrs={'type': 'datetime-local', }),
         input_formats=['%Y-%m-%dT%H:%M'])
 
-   
 
         widgets = {
             'date_of_month': forms.DateInput(attrs={'type': 'date','min': date.today().isoformat()}),

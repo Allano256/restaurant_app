@@ -1,5 +1,4 @@
 
-
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -20,9 +19,11 @@ from django.http import HttpResponseForbidden
 
 
 
-
 # Create your views here.
 def starting_page(request):
+    """
+    This function takes the user to the landing page of the application.
+    """
    
     return render(request, "booking/index.html")
 
@@ -84,9 +85,6 @@ def single_reservation(request, pk):
     
     return render(request,'booking/single_reservation.html', {'reservation': reservation})
  
-
-
-
 
 @login_required
 def cancel_reservation(request, reservation_id ):
