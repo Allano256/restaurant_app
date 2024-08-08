@@ -6,11 +6,13 @@
     margin: 0;
 }
 
+
 html {
     font-family: 'Lato', sans-serif;
 
 
 }
+
 
 body, html {
    
@@ -19,6 +21,7 @@ body, html {
     height: 100%;
     width: 100%;
 }
+
 
 #head {
     height: 150px;
@@ -33,16 +36,19 @@ body, html {
     
 }
 
+
 .no-background{
     background: none;
     border: none;
 }
+
 
 .button {
     display: inline;
    
    
 }
+
 
 .button1:hover  {
     background-color: #34582e;
@@ -51,10 +57,12 @@ body, html {
    
 }
 
+
 #make {
     color: white;
     font-family: 'lato', sans-serif;
 }
+
 
 #show {
     color: white;
@@ -71,11 +79,11 @@ body, html {
     object-fit: cover;
 }
 
+
 .image {
     height: 100vh;
     
 }
-
 
 
 .food-mart {
@@ -92,6 +100,7 @@ body, html {
     
   }
 
+
 .text {
     padding: 2rem 3rem;
     font-family: 'Poppins', sans-serif;
@@ -100,11 +109,13 @@ body, html {
 
 }
 
+
 h2, p {
     color: #160202;
     margin: 0;
     letter-spacing: 3px;
 }
+
 
 .main {
     color: #e2d9d9;
@@ -112,6 +123,7 @@ h2, p {
     letter-spacing: 3px;
     font-family: 'poppins', sans-serif;
 }
+
 
 .text {
     background-color: black;
@@ -134,8 +146,6 @@ a {
 } 
 
 
-
-
 .link, .helptext a {
     border-radius: none;
     background-color: transparent !important;
@@ -143,7 +153,6 @@ a {
     border: none;
    
 }
-
 
 
 .nav-nav-link{
@@ -154,18 +163,16 @@ a {
 }
 
 
-
 ul {
     list-style-type: none;
 }
-
-
 
 
 footer{
     background-color: black;
     padding: 50px;
 }
+
 
 .socials  {
     display: flex;
@@ -174,19 +181,22 @@ footer{
   
 }
 
+
 .socials li {
     margin-right: 50px;
 }
+
+
 .socials a {
     color: white;
     font-size: 30px;
 }
 
+
 .para {
     text-align: center;
     
 }
-
 
 
 form { 
@@ -199,11 +209,11 @@ form {
     box-shadow: 0 2px 8px rgba(0,0,0);
 }
 
+
 input {
     width: 100% !important;
    
 }
-
 
 
 .submit {
@@ -213,6 +223,8 @@ input {
     background-color: #34582e;
     color: white;
 }
+
+
 button:hover,
 button:active  {
     background-color: #44ed26;
@@ -220,9 +232,11 @@ button:active  {
    
 }
 
+
 .form-control {
     margin-bottom: 1rem;
 }
+
 
 .form-control input {
     font: inherit;
@@ -240,6 +254,7 @@ button:active  {
     background-color: white;
 
 }
+
 
 .form-control label{
     font-weight: bold;
@@ -270,6 +285,7 @@ button:active  {
     
 }
 
+
 .grid-item {
     background-color: #f1f1f1;
     padding: 20px;
@@ -290,20 +306,23 @@ button:active  {
  
 }
 
+
 .hidden {
 
     display: none;
 }
+
 
 .required-field::after {
     content: " *";
     color: red;
 }
 
-/* css for logout,login, signup */
+
 .navbar {
     height: 150px;
 }
+
 
 .overlay {
     position: absolute;
@@ -316,6 +335,7 @@ button:active  {
     z-index: 5;
   }
   
+
   .modal {
     position: absolute;
     top: 50%;
@@ -330,11 +350,11 @@ button:active  {
     margin: auto;
     text-align: center;
   }
+
+
   .modal-modal {
     align-items: center;
   }
-
-
 
 
 @media only screen and (max-width: 600px) {

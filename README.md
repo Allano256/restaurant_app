@@ -243,6 +243,12 @@ The deployed version can be found via this link on Heroku,
 
 [restaurant_app](https://restaurant256-cba0e80966cc.herokuapp.com/)
 
+</ul>
+
+<ul>
+<ol><strong>Bugs during development.</strong></ol>
+<li>"Template doesn't exist", this was a very common error during the process as the page couldnot be rendered. The way this was fixed was that the url paths were not setup well and therefore i always double checked the url paths incase the template was not found.</li>
+<li>Images that were not showing, the landing page has acouple of images on it and in the start some of the images were not showing and this was due to the paths that were not setup well. A quick fix was to setup the file paths in a correct order.</li>
 
 </ul>
 
