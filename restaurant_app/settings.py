@@ -59,16 +59,6 @@ The redirection URLs will redirect us back to home page after we've logged in or
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# AUTHENTICATION_BACKENDS = [
-  
-#     # Needed to login by username in Django admin, regardless of `allauth`
-#     'django.contrib.auth.backends.ModelBackend',
-
-#     # `allauth` specific authentication methods, such as login by email
-#     'allauth.account.auth_backends.AuthenticationBackend',
-  
-# ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
