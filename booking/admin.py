@@ -8,7 +8,5 @@ class ReservationAdmin(admin.ModelAdmin):
 
 admin.site.register(Reservation, ReservationAdmin)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f155bbe1073bad43e0b1be785af48feb5f80b4b0
+

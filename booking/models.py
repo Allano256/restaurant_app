@@ -22,12 +22,9 @@ class Reservation(models.Model):
     def __self__(self):
         return self.name_user
 
-<<<<<<< HEAD
-  
-=======
    
    
->>>>>>> f155bbe1073bad43e0b1be785af48feb5f80b4b0
+
 
 
 

@@ -108,10 +108,7 @@ Features in this project were structured based on the
 
 ![restaurant_app](booking/static/booking/images/logout.png)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f155bbe1073bad43e0b1be785af48feb5f80b4b0
 <ul>
 <ol><strong>Admin panel</strong></ol>
 <li>The admin panel is accessible only by administrators,it shows the database details.</li>
@@ -121,8 +118,7 @@ Features in this project were structured based on the
 ![restaurant_app](booking/static/booking/images/admin.png)
 
 
-<<<<<<< HEAD
-=======
+
 
 ## Database Schema
 
@@ -143,7 +139,7 @@ The database schema for the JO's restaurant project is based on the following mo
 
   
 
->>>>>>> f155bbe1073bad43e0b1be785af48feb5f80b4b0
+
 # Design
 
 The application layout was designed by hand on figma highlighting the core parts of the application. As viewed in the diagram, the navigation area, a text area inbetween, sections with images and a footer to sum it up.
