@@ -31,7 +31,7 @@
             <p>NAME: {{reservation.name_user}} </p>
             <p>DATE: {{reservation.date_of_month}}</p>
             
-            <a class="nav-nav-link" href="{% url 'single_reservation' reservation.id %}">View reservation.</a>
+            <a class="nav-nav-link" href="{% url 'booking:single_reservation' reservation.id %}">View reservation.</a>
              
         </div>
         {% empty%}

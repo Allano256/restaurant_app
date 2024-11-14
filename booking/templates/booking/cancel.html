@@ -14,7 +14,7 @@
 <h2>Cancel Booking</h2>
 
 <P>Please enter your user name.</P>
-<form  action=" {% url 'cancel' reservation.id %}" method="POST">
+<form  action=" {% url 'booking:cancel' reservation.id %}" method="POST">
 
   {% csrf_token %}
 
