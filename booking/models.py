@@ -17,6 +17,7 @@ class Reservation(models.Model):
     date_of_month = models.DateField(default=None)
     time_of_day = models.TimeField(default=None)
     message_to_restaurant = models.TextField(max_length=100, blank=True)
+    
    
     
     def __self__(self):

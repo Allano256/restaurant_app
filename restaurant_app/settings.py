@@ -30,14 +30,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
 
-ALLOWED_HOSTS = [ '8000-allano256-restaurantapp-gova2qvrpl6.ws.codeinstitute-ide.net'  ,'.herokuapp.com' ]
+ALLOWED_HOSTS = [ '8000-allano256-restaurantapp-t3zrmicll2j.ws.codeinstitute-ide.net'  ,'.herokuapp.com' ]
 
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'booking',
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    
+    'booking',
    
 ]
 
@@ -67,9 +67,10 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
+    
 ]
 
 ROOT_URLCONF = 'restaurant_app.urls'
@@ -100,15 +101,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restaurant_app.wsgi.application'
 
-database_url = os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-if isinstance(database_url, bytes):
-    database_url = database_url.decode("utf-8")
+# database_url = os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+# if isinstance(database_url, bytes):
+#     database_url = database_url.decode("utf-8")
 
 
 
+
+# DATABASES = {
+#     'default': dj_database_url.parse(database_url)
+# }
 
 DATABASES = {
-    'default': dj_database_url.parse(database_url)
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
