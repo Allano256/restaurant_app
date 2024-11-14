@@ -21,7 +21,7 @@
    
     {% include 'booking/includes/navbar.html'%}
 
-     <form action="{% url 'booking:update' reservation.id %}"   method="POST">
+     <form action="{% url 'update' reservation.id %}"   method="POST">
        {% csrf_token%}
 
        <div class="form-control  ">

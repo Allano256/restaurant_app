@@ -23,7 +23,7 @@
 {% include 'booking/includes/navbar.html'%}
 
 
-<form action="{% url 'booking:reserve' %}" method="POST">
+<form action="{% url 'reserve' %}" method="POST">
     {% csrf_token%}
 
 

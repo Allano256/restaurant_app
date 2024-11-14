@@ -34,7 +34,7 @@
     <p>GUESTS: {{reservation.number_of_guests}}</p>
     
     <button class="btn nav-nav-link  show-modal  btn-delete  " data-id='{{ reservation.id }}' > Delete </button>
-    <a  class="btn nav-nav-link"   href="{% url 'booking:update' reservation.id %}"> Edit </a>
+    <a  class="btn nav-nav-link"   href="{% url 'update' reservation.id %}"> Edit </a>
     </div>
 
  </div> 
@@ -47,7 +47,7 @@
     <button class="btn nav-nav-link close-modal ">No</button>
    
 
-    <a class="btn nav-nav-link"   id="cancelConfirm" href="{% url 'booking:cancel' reservation.id %}" class="btn">Yes</a>
+    <a class="btn nav-nav-link"   id="cancelConfirm" href="{% url 'cancel' reservation.id %}" class="btn">Yes</a>
    </div>
   
 </div>
