@@ -7,10 +7,13 @@ from .models import Reservation
 
 
 class TestReservationView(TestCase):
-     #Create test user
+    """
+    Create test user
+    """
+   
     def setUp(self):
     
-        # Create a test user
+       
         self.user = User.objects.create_user(username='Mike', password='testpassword123')
         self.login_url = reverse('account_login')  
         self.reserve_url = reverse('booking:reserve') 
@@ -18,10 +21,14 @@ class TestReservationView(TestCase):
 
     
     def test_reservation_success(self):
-        # Log in the user
+        """
+         Log in the user
+        """
+    
         self.client.login(username='Mike', password='testpassword123')
 
         # Valid reservation data
+        
         future_time = (datetime.now() + timedelta(hours=1)).time()
         valid_data = {
             'name_user': 'Mike',
@@ -43,7 +50,9 @@ class TestReservationView(TestCase):
         self.assertEqual(reservation.number_of_guests, 2)
 
     def test_reservation_time_in_past(self):
-        # Log in the user
+        """
+         Log in the user
+        """
         self.client.login(username='Mike', password='testpassword123')
 
         # Prepare invalid reservation data (time in the past)

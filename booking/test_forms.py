@@ -62,7 +62,7 @@ class TestEditForm(TestCase):
 
 class TestEditForm(TestCase):
     """
-    Test for all fields,giving an empty name field.
+    Test for all fields,giving an empty name_user field.
     """
 
     def test_edit_reserve_form_is_invalid(self):
