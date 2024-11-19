@@ -24,7 +24,7 @@ class TestReserveForm(TestCase):
 
 class TestReserveForm(TestCase):
     """
-    Test for all fields,giving an empty email_user,name_user field.
+    Test for all fields giving an empty email_user,name_user field.
     """
     
     def test_form_is_invalid(self):
@@ -66,7 +66,7 @@ class TestEditForm(TestCase):
     """
 
     def test_edit_reserve_form_is_invalid(self):
-        valid_data = {
+        invalid_data = {
             'name_user': '',
             'email_user': 'allan@yahoo.com',
             'phone_user': '+1234567890',
@@ -75,7 +75,7 @@ class TestEditForm(TestCase):
             'time_of_day': '18:30',
             'message_to_restaurant': 'Looking forward to visiting!',
         }
-        editreserve_form = EditForm(valid_data)
+        editreserve_form = EditForm(invalid_data)
         self.assertFalse(editreserve_form.is_valid(), msg='Edit form is  valid')
 
 
