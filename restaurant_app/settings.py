@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -101,20 +102,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restaurant_app.wsgi.application'
 
-# database_url = os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-# if isinstance(database_url, bytes):
-#     database_url = database_url.decode("utf-8")
-
-
-
-
-# DATABASES = {
-#     'default': dj_database_url.parse(database_url)
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+# This is for testing purposes
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net",
