@@ -126,31 +126,3 @@ def update_reservation(request, reservation_id):
     
 
     return render(request, 'booking/update.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-        
-
-
-
-
-
-
-
-
-
- 

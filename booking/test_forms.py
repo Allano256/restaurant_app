@@ -76,9 +76,4 @@ class TestEditForm(TestCase):
             'message_to_restaurant': 'Looking forward to visiting!',
         }
         editreserve_form = EditForm(invalid_data)
-        self.assertFalse(editreserve_form.is_valid(), msg='Edit form is  valid')
-
-
-
-
-    
+        self.assertFalse(editreserve_form.is_valid(), msg='Edit form is  valid')    

@@ -22,14 +22,3 @@ class Reservation(models.Model):
     
     def __self__(self):
         return self.name_user
-
-   
-   
-
-
-
-
-
-
-  
-
