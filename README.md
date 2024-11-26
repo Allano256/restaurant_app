@@ -217,12 +217,19 @@ The live link can be found here;
 The project was deployed on the GitHub hosting platform and below are the steps taken to achieve the feat.
 <ul>
 <ol><strong>Deployment</strong></ol>
-<li>Log into your account in github</li>
+
 <li>Go to the repository of restaurant_app
 </li>
 <li>Click on the code button,and copy your preffered clone link. </li>
+<li>Click on the green "Code" button in your repository.</li>
 <li>Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.</li>
-<li>Use git clone into the terminal, paste the link you copied in step 3 and press enter.</li>
+<li>Clone the Repository Locally:</li>
+<li>Use git clone into the terminal, paste the link you copied  and press enter.</li>
+<li>Change the directory to where you want to store the project by using:</li>
+<li>cd path_to_directory</li>
+<li>git clone <repository_url></li>
+<li>cd restaurant_app</li>
+<li>Install Dependencies:</li>
 
 
 <ul>
