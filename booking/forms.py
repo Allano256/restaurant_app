@@ -75,6 +75,8 @@ class ReserveForm(forms.ModelForm):
 
             return reservation_date
 
+       
+
         def number_guests(self):
             guests_allowed =self.cleaned_data['number_of_guests']
             if not( 1 <= guests_allowed <= 10) :
