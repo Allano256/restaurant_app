@@ -15,17 +15,31 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Reservation',
+            name="Reservation",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name_user', models.CharField(max_length=50)),
-                ('email_user', models.EmailField(blank=True, max_length=50)),
-                ('phone_user', models.CharField(default=None, max_length=30)),
-                ('number_of_guests', models.IntegerField()),
-                ('date_of_month', models.DateField(default=None)),
-                ('time_of_day', models.TimeField(default=None)),
-                ('message_to_restaurant', models.TextField(blank=True, max_length=100)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name_user", models.CharField(max_length=50)),
+                ("email_user", models.EmailField(blank=True, max_length=50)),
+                ("phone_user", models.CharField(default=None, max_length=30)),
+                ("number_of_guests", models.IntegerField()),
+                ("date_of_month", models.DateField(default=None)),
+                ("time_of_day", models.TimeField(default=None)),
+                ("message_to_restaurant", models.TextField(blank=True, max_length=100)),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

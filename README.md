@@ -165,6 +165,12 @@ Code from the javascript file was copied and pasted into the JS Hint application
 
 ![restaurant_app](booking/static/booking/images/dateTest.png)
 
+Further testing was done using the "CI python Linter" on each python file, an example is here of the outcome.
+Using the tool, we copy and paste the entire code into the validator to ascertain the errors and then manually change them.
+
+In the example below we see a form.py pep8 validation result.
+![restaurant_app](booking/static/booking/images/pep8new.png)
+
 The live link can be found here;
 
 [restaurant_app](https://allano256.github.io/restaurant_app/)
