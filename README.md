@@ -129,13 +129,14 @@ The application layout was designed by hand on figma highlighting the core parts
 <ul>
 <ol><strong>Testing</strong></ol>
 <li>HTML, W3C was used to validate the project for any errors. The project did not have any errors and was successfull.
+In the same way the file of the application was copied and pasted into the W3C tool and checked for code validation.. gave the following result as highlighted in the images shared below.
 The site tested HTML and CSS for the application.</li>
 
 ![restaurant_app](booking/static/booking/images/validation10.png)
 
 [W3Validator](https://validator.w3.org/)
 
-<li>Javascript, JS Hint was used to validate the javascript for any errors. The project did not have any errors an was successful.
+<li>Javascript, JS Hint was used to validate the javascript for any errors. The project did not have any errors and was successful.
 Code from the javascript file was copied and pasted into the JS Hint application for tesing which didnt produce any errors.</li>
 
 [jshint](https://jshint.com/)
@@ -143,7 +144,8 @@ Code from the javascript file was copied and pasted into the JS Hint application
 ![restaurant_app](booking/static/booking/images/js-valid.png)
 
 <li>Manual testing was done on the different parts of the software to ensure that it works as it should</li>
-<li>Manual testing was done on the form to ensure that fields that have an asterik must be filledout for the form to be considered valid.</li>
+<li>Manual testing was done on the form to ensure that fields that have an asterik must be filledout for the form to be considered valid.
+Incase the user missesout to fillout one of the fields, an error is shown on the screen that the field is required to be filledout. Only after all thye required fields are filledout, the form can be successfully submitted.</li>
 
 ![restaurant_app](booking/static/booking/images/formTesting.png)
 
