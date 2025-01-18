@@ -173,6 +173,36 @@ Using the tool, we copy and paste the entire code into the validator to ascertai
 In the example below we see a form.py pep8 validation result.
 ![restaurant_app](booking/static/booking/images/pep8new.png)
 
+
+| Page          | User Action                  | Expected Results                                      | Y/N  |    Comments      |
+| Signup        |                              |                                                       |      |                  |
+| 1             | Click signup button          | No Error? redirection to Login page                   | Y    |                  |
+| 2             | Enter matching password twice| No error                                              | Y    |                  |
+| 3             | Enter differing passwords    |Error message                                          | Y    |                  |
+| Signin        |                              |                                                       |      |                  |
+| 1             | Valid username/password      | redirect to home page                                 | Y    |                  |
+| 2             | Invalid credentials          | Error message about credentials                       | Y    |                  |
+| 3             | unregistred user clicks login| redirects to signup page                              | Y    |                  |
+|  Logout       |                              |                                                       |      |                  |
+| 1             | User clicks logout           | Modal window appears to ensure action is intended     | Y    |                  |
+| 2             | Confirmation                 | User loggedout and redirected to start page           | Y    |                  |
+|Navigation     |                              |                                                       |      |                  |
+| 1             | User clicks on logo          | redirected to home page                               | Y    |                  |
+| 2             | User clicks make reservation | Redirected to booking form                            | Y    |                  |
+| 3             | User clicks submit           |Message to confirm booking ,redirect to booking summary| Y    |                  |
+| 4             | User clicks show reservation | A  summary of his/her bookings is shown               | Y    |                  |
+| 5             | User click edit              |Prefilled form shown                                   | y    |                  |
+| 6             | User clicks delete           | modal appears to confirm delete                       | y    |                  |
+
+
+
+
+
+
+
+
+
+
 The live link can be found here;
 
 [restaurant_app](https://allano256.github.io/restaurant_app/)
